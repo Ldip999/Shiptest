@@ -168,6 +168,7 @@
 				"slots" = slots,
 				"minTime" = job.officer ? S.source_template.get_req_officer_minutes() : 0,
 				"officer" = job.officer,
+				"anomalyLoadout" = job.anomalyLoadout,
 				"ref" = REF(job),
 			))
 

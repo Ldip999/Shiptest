@@ -86,5 +86,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander)
 	icon_state = "commander_inteq"
 	item_state = "inteq_generic"
 	manufacturer = MANUFACTURER_INTEQ
+	anomaly_loadout_pointcost = 200
 
 NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)

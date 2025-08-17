@@ -42,12 +42,15 @@ export const ShipSelect = (props, context) => {
 
   const [shownTabs, setShownTabs] = useLocalState(context, 'tabs', [
     { name: 'Ship Select', tab: 1 },
-    { name: 'Ship Purchase', tab: 3 },
+    { name: 'Ship Purchase', tab: 4 },
   ]);
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
 
   const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+
+
+  const [selectedRole, setSelectedRole] = useLocalState(context, 'selectedRole', null);
 
   return (
     <Window title="Ship Select" width={800} height={600} resizable>
@@ -82,7 +85,7 @@ export const ShipSelect = (props, context) => {
                   }
                   disabled={data.purchaseBanned}
                   onClick={() => {
-                    setCurrentTab(3);
+                    setCurrentTab(4);
                   }}
                 />
                 <Button
@@ -193,6 +196,7 @@ export const ShipSelect = (props, context) => {
                   <Table.Cell>Job Name</Table.Cell>
                   <Table.Cell>Slots</Table.Cell>
                   <Table.Cell>Min. Playtime</Table.Cell>
+                  <Table.Cell>Anomaly Loadout</Table.Cell>
                 </Table.Row>
                 {selectedShip.jobs.map((job) => (
                   <Table.Row key={job.name}>
@@ -223,13 +227,14 @@ export const ShipSelect = (props, context) => {
                     <Table.Cell>
                       {formatShipTime(job.minTime, data.playMin, data.autoMeet)}
                     </Table.Cell>
+                    <Table.Cell>{job.anomalyLoadout}</Table.Cell>
                   </Table.Row>
                 ))}
               </Table>
             </Section>
           </>
         )}
-        {currentTab === 3 && (
+        {currentTab === 4 && (
           <Section
             title="Ship Purchase"
             buttons={

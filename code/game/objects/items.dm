@@ -237,6 +237,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/unique_reskin_changes_inhand = FALSE
 	var/unique_reskin_changes_name = FALSE
 
+	var/anomaly_loadout_pointcost = 0
+
 	bad_type = /obj/item
 
 /obj/item/Initialize()
