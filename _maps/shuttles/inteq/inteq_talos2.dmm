@@ -641,6 +641,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"dA" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 14
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "dE" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -1321,7 +1328,9 @@
 	dir = 8
 	},
 /obj/machinery/air_sensor/atmos/mix_tank,
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/fuel{
+	initial_gas_mix = "o2=66000;plasma=33000;TEMP=293.15"
+	},
 /area/ship/engineering/engine)
 "hG" = (
 /obj/structure/railing{
@@ -1443,13 +1452,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"ib" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "ie" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/engine)
@@ -3714,7 +3716,9 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input{
 	dir = 8
 	},
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/fuel{
+	initial_gas_mix = "o2=66000;plasma=33000;TEMP=293.15"
+	},
 /area/ship/engineering/engine)
 "vJ" = (
 /turf/open/floor/plasteel/showroomfloor,
@@ -7210,7 +7214,9 @@
 /obj/effect/turf_decal/atmos/mix{
 	dir = 8
 	},
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/fuel{
+	initial_gas_mix = "o2=66000;plasma=33000;TEMP=293.15"
+	},
 /area/ship/engineering/engine)
 "Qp" = (
 /obj/machinery/computer/mech_bay_power_console{
@@ -8308,7 +8314,9 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 32
 	},
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/fuel{
+	initial_gas_mix = "o2=66000;plasma=33000;TEMP=293.15"
+	},
 /area/ship/engineering/engine)
 "XH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9088,7 +9096,7 @@ ny
 xI
 Oq
 kD
-ib
+dA
 EL
 kq
 sA
