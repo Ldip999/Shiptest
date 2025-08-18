@@ -350,3 +350,10 @@
 	max_items = 80
 	show_categories = list("Food", "Botany Chemicals", "Organic Materials", "LIFESEED_2.0")
 	circuit = null
+
+/obj/machinery/biogenerator/rations
+	name = "ration assembler"
+	color = "#72f55b"
+	desc = "Converts organic material into edible rations. Even packages them, how neat!"
+	show_categories = list("Ration")
+	circuit = null
