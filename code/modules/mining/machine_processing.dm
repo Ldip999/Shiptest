@@ -295,6 +295,6 @@
 
 /obj/machinery/mineral/processing_unit/outpost/Initialize()
 	. = ..()
-	component_parts = list(new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto)
+	component_parts = list(new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,/obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto)
 
 #undef SMELT_AMOUNT
