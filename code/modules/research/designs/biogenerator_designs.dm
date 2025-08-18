@@ -222,7 +222,7 @@
 	name = "Vegan Chili Ration"
 	id = "vegan_chili_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/vegan_chili
 	category = list("initial","Ration")
 
@@ -231,7 +231,7 @@
 	name = "Shredded Beef Ration"
 	id = "shredded_beef_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/shredded_beef
 	category = list("initial","Ration")
 
@@ -239,7 +239,7 @@
 	name = "Pork Spaghetti Ration"
 	id = "pork_spaghetti_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/pork_spaghetti
 	category = list("initial","Ration")
 
@@ -247,7 +247,7 @@
 	name = "Fried Fish Ration"
 	id = "fried_fish_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/fried_fish
 	category = list("initial","Ration")
 
@@ -255,7 +255,7 @@
 	name = "Beef Strips Ration"
 	id = "beef_strips_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/beef_strips
 	category = list("initial","Ration")
 
@@ -263,7 +263,7 @@
 	name = "Beef Strips Ration"
 	id = "beef_strips_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/beef_strips
 	category = list("initial","Ration")
 
@@ -271,7 +271,7 @@
 	name = "Chili Macaroni Ration"
 	id = "chili_macaroni_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/chili_macaroni
 	category = list("initial","Ration")
 
@@ -279,7 +279,7 @@
 	name = "Chicken Wings Hot Sauce Ration"
 	id = "chicken_wings_hot_sauce_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/chicken_wings_hot_sauce
 	category = list("initial","Ration")
 
@@ -287,7 +287,7 @@
 	name = "Fish Stew Ration"
 	id = "fish_stew_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/fish_stew
 	category = list("initial","Ration")
 
@@ -295,7 +295,7 @@
 	name = "Lemon Pepper Chicken Ration"
 	id = "lemon_pepper_chicken_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/lemon_pepper_chicken
 	category = list("initial","Ration")
 
@@ -303,7 +303,7 @@
 	name = "Sausage Peppers Onions Ration"
 	id = "sausage_peppers_onions_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/sausage_peppers_onions
 	category = list("initial","Ration")
 
@@ -311,7 +311,7 @@
 	name = "Pork Dumplings Chili Sauce Ration"
 	id = "pork_dumplings_chili_sauce_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/pork_dumplings_chili_sauce
 	category = list("initial","Ration")
 
@@ -319,7 +319,7 @@
 	name = "Battered Fish Sticks Ration"
 	id = "battered_fish_sticks_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/battered_fish_sticks
 	category = list("initial","Ration")
 	
@@ -327,7 +327,7 @@
 	name = "Assorted Salted Offal Ration"
 	id = "assorted_salted_offal_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/assorted_salted_offal
 	category = list("initial","Ration")
 
@@ -335,7 +335,7 @@
 	name = "Maple Pork Sausage Patty Ration"
 	id = "maple_pork_sausage_patty_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/maple_pork_sausage_patty
 	category = list("initial","Ration")
 	
@@ -343,7 +343,7 @@
 	name = "Pepper Jack Beef Patty Ration"
 	id = "pepper_jack_beef_patty_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/pepper_jack_beef_patty
 	category = list("initial","Ration")
 
@@ -351,7 +351,7 @@
 	name = "Beef Goulash Ration"
 	id = "beef_goulash_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/beef_goulash
 	category = list("initial","Ration")
 
@@ -359,7 +359,7 @@
 	name = "Pepperoni Pizza Slice Ration"
 	id = "pepperoni_pizza_slice_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/pepperoni_pizza_slice
 	category = list("initial","Ration")
 	
@@ -367,7 +367,7 @@
 	name = "Blackened Calamari Ration"
 	id = "blackened_calamari_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/blackened_calamari
 	category = list("initial","Ration")
 	
@@ -375,7 +375,7 @@
 	name = "Elbow Macaroni Ration"
 	id = "elbow_macaroni_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/elbow_macaroni
 	category = list("initial","Ration")
 
@@ -383,7 +383,7 @@
 	name = "Politician Pizza Slice Ration"
 	id = "cheese_pizza_slice_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/cheese_pizza_slice
 	category = list("initial","Ration")
 
@@ -391,7 +391,7 @@
 	name = "Sososi Ration"
 	id = "sososi_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/sososi
 	category = list("initial","Ration")
 
@@ -399,7 +399,7 @@
 	name = "Dofidote Ration"
 	id = "dofidote_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/dofidote
 	category = list("initial","Ration")
 
@@ -407,7 +407,7 @@
 	name = "Miras Ration"
 	id = "miras_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/miras
 	category = list("initial","Ration")
 
@@ -415,7 +415,7 @@
 	name = "Xal's Delta Mean Marine Emergency Tactical MRE"
 	id = "crayons_ration"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 10)
+	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/storage/ration/crayons
 	category = list("initial","Ration")
 

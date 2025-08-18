@@ -353,7 +353,6 @@
 
 /obj/machinery/biogenerator/rations
 	name = "ration assembler"
-	color = "#72f55b"
 	desc = "Converts organic material into edible rations. Even packages them, how neat!"
 	show_categories = list("Ration")
-	circuit = null
+	circuit = /obj/item/circuitboard/machine/biogenerator/rations

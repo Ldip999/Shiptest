@@ -1145,6 +1145,10 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 1)
 
+/obj/item/circuitboard/machine/biogenerator/rations
+	name = "Ration Assembler (Machine Board)"
+	build_path = /obj/machinery/biogenerator/rations
+
 /obj/item/circuitboard/machine/chem_dispenser/drinks
 	name = "Soda Dispenser (Machine Board)"
 	icon_state = "service"
