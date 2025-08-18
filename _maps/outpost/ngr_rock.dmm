@@ -8595,13 +8595,13 @@
 	},
 /area/outpost/maintenance/central)
 "Qx" = (
-/obj/machinery/mineral/processing_unit,
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 8
 	},
+/obj/machinery/mineral/processing_unit/outpost,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "QA" = (
