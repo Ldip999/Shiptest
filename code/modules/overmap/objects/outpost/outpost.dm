@@ -57,6 +57,9 @@
 	/// simple var that toggles the flag on/off, neant for eventing purposes
 	var/flag_overlay = TRUE
 
+	/// Self checkout buffer account to deposit into
+	var/datum/bank_account/checkoutbuffer
+
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
 	// init our template vars with the correct singletons
@@ -85,6 +88,8 @@
 
 	fill_missions()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	checkoutbuffer = new("[name] buffer account", 0)
+
 
 /datum/overmap/outpost/Destroy(...)
 	SSpoints_of_interest.remove_point_of_interest(token)

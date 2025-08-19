@@ -26,10 +26,11 @@
 	var/message_cooldown
 
 	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
-	var/message
+	var/message = "Purchases will be delivered to your hangar's delivery zone."
 	var/list/supply_pack_data
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
+	var/selfcheckout = FALSE
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
@@ -93,12 +94,12 @@
 	data["outpostDocked"] = istype(outpost_docked)
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	message = "Purchases will be delivered to your hangar's delivery zone."
+	var/currmsg = message
 	data["blockade"] = FALSE
 	if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
-		message = blockade_warning
+		currmsg = blockade_warning
 		data["blockade"] = TRUE
-	data["message"] = message
+	data["message"] = currmsg
 	data["supplies"] = supply_pack_data
 
 	data["shipMissions"] = list()

@@ -95,6 +95,8 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 				purchase.generate(get_turf(purchase.landing_zone))
 			SScargo.queued_purchases -= purchase
 			qdel(purchase)
+		//else if(SHIPPING_METHOD_SELFCHECKOUT)
+
 
 /datum/cargo_market/outpost
 	name = "outpost market"

@@ -2154,6 +2154,7 @@
 #include "code\modules\cargo\packs\trickwine.dm"
 #include "code\modules\cargo\packs\vendor_refill.dm"
 #include "code\modules\cargo\packs\weapon_attachments.dm"
+#include "code\modules\cargo\outpost_self_checkout.dm"
 #include "code\modules\chatter\chatter.dm"
 #include "code\modules\client\client_colour.dm"
 #include "code\modules\client\client_defines.dm"
