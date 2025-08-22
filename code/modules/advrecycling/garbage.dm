@@ -17,3 +17,4 @@
 	categories = list(MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/garbage
 	value_per_unit = 0.0050
+

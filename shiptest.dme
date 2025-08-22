@@ -3730,4 +3730,6 @@
 #include "interface\skin.dmf"
 #include "code\modules\advrecycling\garbage.dm"
 #include "code\modules\advrecycling\machines.dm"
+#include "code\modules\advrecycling\circuits.dm"
+#include "code\modules\advrecycling\fluids.dm"
 // END_INCLUDE
