@@ -3728,4 +3728,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "code\modules\stats\stats.dm"
 // END_INCLUDE
