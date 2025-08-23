@@ -302,6 +302,12 @@
 		categories += d_disk.name
 		return TRUE
 
+	if(istype(O,/obj/item/storage/bag/bullet))
+		var/obj/item/storage/bag/bullet/BB = O
+		for(var/obj/item/ammo_casing/ac in BB.contents)
+			attackby(ac,user)
+		return TRUE
+
 	return ..()
 
 /obj/machinery/autolathe/proc/eject(mob/living/user)

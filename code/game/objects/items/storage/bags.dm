@@ -520,3 +520,63 @@
 	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
 	storage.max_combined_w_class = INFINITY
 	storage.max_items = 150
+
+
+// -----------------------------
+//        Bullet bag
+// -----------------------------
+
+/obj/item/storage/bag/bullet
+	name = "bullet collector"
+	desc = "Automatically collects spent shells and makes them easy to recycle. For when you need less boolets."
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "booletbag"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	var/spam_protection = FALSE
+	var/mob/listeningTo
+
+/obj/item/storage/bag/bullet/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.allow_quick_empty = TRUE
+	STR.set_holdable(list(/obj/item/ammo_casing/spent/,/obj/item/ammo_casing))
+	STR.max_w_class = WEIGHT_CLASS_TINY
+	STR.max_items = 500
+	
+/obj/item/storage/bag/bullet/equipped(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(Pickup_boolets))
+	listeningTo = user
+
+/obj/item/storage/bag/bullet/dropped()
+	. = ..()
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+		listeningTo = null
+
+/obj/item/storage/bag/bullet/proc/Pickup_boolets(mob/living/user)
+	var/show_message = FALSE
+	var/turf/tile = user.loc
+	if (!isturf(tile))
+		return
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		for(var/A in tile)
+			if (!is_type_in_typecache(A, STR.can_hold))
+				continue
+			else if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
+				show_message = TRUE
+			else
+				if(!spam_protection)
+					to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+					spam_protection = TRUE
+					continue
+	if(show_message)
+		playsound(user, "rustle", 50, TRUE)
+		user.visible_message(span_notice("[user] scoops up the shells beneath [user.p_them()]."), \
+		span_notice("You scoop up the shells beneath you with your [name]."))
+	spam_protection = FALSE
