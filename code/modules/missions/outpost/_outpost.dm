@@ -26,16 +26,20 @@
 	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", value, list(name, "payout"))
 	var/remaining_value = value
 	var/payment = floor(value*servant.crew_share)
-	for(var/datum/weakref/account in servant.crew_bank_accounts)
+	/*for(var/datum/weakref/account in servant.crew_bank_accounts)
 		var/datum/bank_account/target_account = account.resolve()
 		target_account.adjust_money(payment, CREDIT_LOG_MISSION)
 		target_account.bank_card_talk("[payment] credits deposited to account, balance is now [target_account.account_balance]cr.")
-		remaining_value = remaining_value - payment
-	servant.ship_account.adjust_money(remaining_value, CREDIT_LOG_MISSION)
+		remaining_value = remaining_value - payment*/
 	for(var/key in servant.job_holder_refs)
-		for(var/datum/weakref/wagieref in servant.job_holder_refs[key])
+		for(var/datum/weakref/wagieref in servant.job_holder_refs[key]) //This thing throws an error in editor but works perfectly in game and compiles fine. I feel like at this point dreammaker is actively gaslighting me
 			var/mob/living/carbon/human/wagie = wagieref.resolve()
 			wagie.statsofmob.addMission(value)
+			wagie.statsofmob.addMissionPersonalEarnings(payment)
+			var/totalpoints = (value /100) + payment
+			remaining_value -= payment
+			to_chat(wagie, "You received [totalpoints] points for this mission!")
+	servant.ship_account.adjust_money(remaining_value, CREDIT_LOG_MISSION)
 	/*for(var/datum/weakref/wagieref in servant.job_holder_refs)
 		for(var/list/wagielist)
 		var/mob/living/carbon/human/wagie = wagieref.resolve()

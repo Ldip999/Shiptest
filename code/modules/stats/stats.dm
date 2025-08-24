@@ -2,6 +2,7 @@
 	var/mob/parent
 	var/damage_done = 0
 	var/totalmissioncredits = 0
+	var/totalpersonalearnings = 0
 
 /datum/stats/New(mob/p)
 	parent = p
@@ -17,3 +18,9 @@
 		totalmissioncredits += payout
 		var/datum/points/point = GLOB.ckey_points_kvp[parent.ckey]
 		point.AddMissionPoints(payout)
+
+/datum/stats/proc/addMissionPersonalEarnings(payout)
+	if(parent.ckey)
+		totalpersonalearnings += payout
+		var/datum/points/point = GLOB.ckey_points_kvp[parent.ckey]
+		point.addMissionPersonalEarnings(payout)
