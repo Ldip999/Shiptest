@@ -78,6 +78,24 @@
 	. = ..()
 	. += "The bolt is [bolt_locked ? "open" : "closed"]."
 
+/obj/item/gun/ballistic/rifle/mosin
+	name = "M1891 Three Liner"
+	desc = "A classic bolt action rifle that is SOMEHOW still in production in certain parts of space thanks to it's reliability, cost, and munition of choice. Chambered in 7.62x54 rimmed. It get's it's name from the bullet being 3 inches, or as they were known in russia at the time, 3 lines long, but is also known as Mosin, or throughout the western world, Mosin-Nagant, although Nagant's contribution to the rifle is miniscule in the final design. It's design has long been open sourced at this point, and pretty much anyone can make their own, together with the bullets."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/mosin
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/mosin,
+	)
+	icon = 'icons/obj/guns/manufacturer/peoplesopensource/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/peoplesopensource/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/peoplesopensource/righthand.dmi'
+	icon_state = "mosin"
+	item_state = "mosin"
+	has_safety = FALSE
+	safety = FALSE
+	weapon_weight = WEAPON_MEDIUM
+	manufacturer = MANUFACTURER_PEOPLESOPENSOURCE
+
+
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"
 	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in 7.62x40mm."

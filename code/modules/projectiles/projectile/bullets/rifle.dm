@@ -127,3 +127,10 @@
 	armour_penetration = 10
 	speed = BULLET_SPEED_RIFLE
 	bullet_identifier = "medium bullet"
+
+/obj/projectile/bullet/c762_54R
+	name = "7.62 rimmed bullet"
+	damage = 35
+	armour_penetration = 40
+	speed = BULLET_SPEED_RIFLE
+	bullet_identifier = "large bullet"
