@@ -10,6 +10,10 @@ GLOBAL_LIST_EMPTY(ckey_points_kvp)
 	pointsToAdd += dmg / 200
 	EvalPoints()
 
+/datum/points/proc/AddMissionPoints(payout)
+	pointsToAdd += payout / 100
+	EvalPoints()
+
 /datum/points/proc/EvalPoints()
 	if(pointsToAdd >= 1)
 		pointcount += pointsToAdd
