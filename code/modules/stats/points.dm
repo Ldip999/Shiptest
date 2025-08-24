@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(ckey_points_kvp)
 	EvalPoints()
 
 /datum/points/proc/EvalPoints()
-	if(pointsToAdd >= 10)
+	if(pointsToAdd >= 1)
 		pointcount += pointsToAdd
 		pointsToAdd = 0
 		if(!parent)
