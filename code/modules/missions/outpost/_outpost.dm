@@ -32,13 +32,17 @@
 		target_account.bank_card_talk("[payment] credits deposited to account, balance is now [target_account.account_balance]cr.")
 		remaining_value = remaining_value - payment
 	servant.ship_account.adjust_money(remaining_value, CREDIT_LOG_MISSION)
-	for(var/datum/job/jobs in servant.job_holder_refs)
-		for(var/datum/weakref/wagieref in jobs)
+	for(var/key in servant.job_holder_refs)
+		for(var/datum/weakref/wagieref in servant.job_holder_refs[key])
 			var/mob/living/carbon/human/wagie = wagieref.resolve()
-			var/datum/points/wagiepoints = GLOB.ckey_points_kvp[wagie.ckey]
-			wagiepoints.AddMissionPoints(value)
-			var/displaypoints = value/100
-			to_chat(wagie,span_blue("Congratulations on completing the mission! You have been awarded [displaypoints] points!"))
+			wagie.statsofmob.addMission(value)
+	/*for(var/datum/weakref/wagieref in servant.job_holder_refs)
+		for(var/list/wagielist)
+		var/mob/living/carbon/human/wagie = wagieref.resolve()
+		wagie.statsofmob.addMission(value)
+		for(var/datum/weakref/wagieref in servant.job_holder_refs[key])
+			var/mob/living/carbon/human/wagie = wagieref.resolve()
+			wagie.statsofmob.addMission(value)*/
 	qdel(src)
 
 /datum/mission/outpost/proc/give_up()
