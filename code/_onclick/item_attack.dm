@@ -178,9 +178,10 @@
 
 	if(!attacking_item.force)
 		return FALSE
-
+	var/beforehealth = stat == DEAD ? 0 : health
 	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value)
-	user.statsofmob.addDamage(attacking_item.force- ((100-armor_value)/100))
+	var/afterhealth = stat == DEAD ? 0 : health
+	user.statsofmob.addDamage(beforehealth - afterhealth)
 
 	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
