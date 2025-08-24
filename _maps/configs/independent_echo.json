@@ -1,0 +1,30 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Echo-Class Transport",
+	"map_short_name": "Echo-class",
+	"description": "A Relatively compact ship, with all round facilities, Regarded as a cargo vessel, it would primarily be suited for hauling operations, however some basic weapons and mining equipment is included for those who are financially challenged after buying this ship.",
+	"tags": ["Cargo","Mining"],
+	"map_path": "_maps/shuttles/independent/independent_echo.dmm",
+	"namelists": ["GENERAL", "SPACE"],
+	"faction": "/datum/faction/independent",
+	"prefix": "ECT",
+	"manufacturer": "to be determined",
+	"limit": 100,
+	"starting_funds": 500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"slots": 1,
+			"officer": true
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 6
+		}
+	},
+	"enabled": true
+}
