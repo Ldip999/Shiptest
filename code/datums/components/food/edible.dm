@@ -242,6 +242,7 @@ Behavior that's still missing from this component that original food items had t
 
 	if(!microwaved_type)
 		new /obj/item/food/badrecipe(parent_turf)
+		playsound(src,"sound/machines/microwave/microwave-badrecipe.ogg", 50, TRUE)
 		qdel(parent)
 		return
 
