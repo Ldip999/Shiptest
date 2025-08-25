@@ -230,6 +230,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//favorite outfits
 	READ_FILE(S["favorite_outfits"], favorite_outfits)
+
+	READ_FILE(S["points"],points)
+	if(points == null)
+		points = 0
+	
 	var/list/parsed_favs = list()
 	for(var/typetext in favorite_outfits)
 		var/datum/outfit/path = text2path(typetext)
@@ -378,6 +383,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["large_tgui_buttons"], large_tgui_buttons)
 	WRITE_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
 	WRITE_FILE(S["tgui_input"], tgui_input)
+	WRITE_FILE(S["points"],points)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)
