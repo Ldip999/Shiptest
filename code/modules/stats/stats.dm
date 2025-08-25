@@ -3,6 +3,7 @@
 	var/damage_done = 0
 	var/totalmissioncredits = 0
 	var/totalpersonalearnings = 0
+	var/totalminingxp = 0
 
 /datum/stats/New(mob/p)
 	parent = p
@@ -24,3 +25,9 @@
 		totalpersonalearnings += payout
 		var/datum/points/point = GLOB.ckey_points_kvp[parent.ckey]
 		point.addMissionPersonalEarnings(payout)
+
+/datum/stats/proc/addMiningXP(xp)
+	if(parent.ckey)
+		totalminingxp += xp
+		var/datum/points/point = GLOB.ckey_points_kvp[parent.ckey]
+		point.addMiningXP(xp)
