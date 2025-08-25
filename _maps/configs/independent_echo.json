@@ -7,10 +7,9 @@
 	"map_path": "_maps/shuttles/independent/independent_echo.dmm",
 	"namelists": ["GENERAL", "SPACE"],
 	"faction": "/datum/faction/independent",
-	"prefix": "ECT",
-	"manufacturer": "to be determined",
+	"prefix": "SV",
 	"limit": 100,
-	"starting_funds": 500,
+	"starting_funds": 2000,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain",
