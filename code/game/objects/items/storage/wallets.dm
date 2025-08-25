@@ -10,7 +10,7 @@
 	var/obj/item/card/id/front_id = null
 	var/list/combined_access
 	var/cached_flat_icon
-
+	var/list/startingbits = list()
 /obj/item/storage/wallet/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage/concrete/wallet)
@@ -125,3 +125,62 @@
 /obj/item/storage/wallet/random/PopulateContents()
 	new /obj/effect/spawner/random/entertainment/wallet_storage(src)
 	icon_state = "wallet"
+
+/obj/item/storage/wallet/drop/PopulateContents()
+	generate_items_inside(startingbits,src)
+	. = ..()
+
+/obj/item/storage/wallet/drop/poor/PopulateContents()
+	startingbits += list(/obj/item/spacecash/bundle/smallrand = 1)
+	. = ..()
+	
+/obj/item/storage/wallet/drop/poor/generic/PopulateContents()
+	startingbits += list(/obj/item/card/id = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/poor/solgov/PopulateContents()
+	startingbits += list(/obj/item/card/id/solgov = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/poor/syndicate/PopulateContents()
+	startingbits += list(/obj/item/card/id/syndicate = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/welloff/PopulateContents()
+	startingbits += list(/obj/item/spacecash/bundle/smallrand = 1)
+	startingbits += list(/obj/item/spacecash/bundle/smallrand = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/welloff/generic/PopulateContents()
+	startingbits += list(/obj/item/card/id = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/welloff/solgov/PopulateContents()
+	startingbits += list(/obj/item/card/id/solgov = 1)
+	. = ..()
+
+
+/obj/item/storage/wallet/drop/welloff/syndicate/PopulateContents()
+	startingbits += list(/obj/item/card/id/syndicate = 1)
+
+	. = ..()
+
+/obj/item/storage/wallet/drop/rich/PopulateContents()
+	startingbits += list(/obj/item/spacecash/bundle/mediumrand = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/rich/generic/PopulateContents()
+	startingbits += list(/obj/item/card/id = 1)
+	. = ..()
+
+/obj/item/storage/wallet/drop/rich/solgov/PopulateContents()
+	startingbits += list(/obj/item/card/id/solgov = 1)
+	. = ..()
+
+
+/obj/item/storage/wallet/drop/rich/syndicate/PopulateContents()
+	startingbits += list(/obj/item/card/id/syndicate = 1)
+
+	. = ..()
+	
+

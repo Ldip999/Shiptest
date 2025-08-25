@@ -137,7 +137,6 @@
 
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
-
 	l_hand =/obj/item/melee/knife/combat
 
 	melee_damage_lower = 20
@@ -247,8 +246,11 @@
 	icon_living = "syndicate_pistol"
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/weapons/gun/pistol/shot.ogg'
+	mob_spawner =  /obj/effect/mob_spawn/human/corpse/ramzi/ranged/pistol
 	rapid_melee = 1
 	l_hand =/obj/item/gun/ballistic/automatic/pistol/ringneck
+	
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/ringneck/worn = 1)
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg
 	name = "Ramzi Clique Commando"
@@ -259,6 +261,9 @@
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/ranged/smg
+	
+	loot = list(/obj/item/gun/ballistic/automatic/smg/cobra/worn = 1)
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
@@ -271,7 +276,10 @@
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot fired in a two-round burst. This will two-tap unarmored players.
 	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/ranged/shotgun
 	shoot_point_blank = TRUE
+	loot = list(/obj/item/gun/ballistic/shotgun/automatic/bulldog/worn = 1)
+
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary
 	name = "Ramzi Clique Firestarter"
@@ -303,6 +311,7 @@
 	speed = 1
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
+	loot = list(/obj/item/gun/ballistic/shotgun/automatic/pistol/ringneck = 1)
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/Initialize()
 	. = ..()
@@ -329,6 +338,7 @@
 	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/smg
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg
 	name = "Ramzi Clique Commando"
@@ -336,6 +346,7 @@
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/smg
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
 
@@ -348,10 +359,12 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	rapid = 2
+	mob_spawner =  /obj/effect/mob_spawn/human/corpse/ramzi/space/shotgun
 	rapid_fire_delay = 6
 	retreat_distance = 2
 	minimum_distance = 2
 	shoot_point_blank = TRUE
+
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper
 	name = "Ramzi Clique Deadeye"
@@ -361,6 +374,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate__space_shotgun"
+
 	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 

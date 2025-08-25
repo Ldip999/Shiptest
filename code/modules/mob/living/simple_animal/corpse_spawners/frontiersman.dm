@@ -13,6 +13,8 @@
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
 	neck = /obj/item/clothing/neck/dogtag/frontier
+	id = /obj/item/storage/wallet/drop/poor/generic
+	r_hand = /obj/item/melee/knife/survival
 
 /datum/outfit/frontier/internals
 	name = "Frontiersman Corpse Internals"
@@ -20,7 +22,12 @@
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
-	outfit = /datum/outfit/frontier
+	outfit = /datum/outfit/frontier/ranged
+	
+/datum/outfit/frontier/ranged
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/mauler/regular
+	belt = /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo
+
 
 /obj/effect/mob_spawn/human/corpse/frontier/space
 	outfit = /datum/outfit/frontier/trooper/space
@@ -28,16 +35,23 @@
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 	outfit = /datum/outfit/frontier/internals
 
+/datum/outfit/frontier/ranged/internals
+	mask = /obj/item/clothing/mask/gas/sechailer
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	
 /obj/effect/mob_spawn/human/corpse/frontier/surgeon
 	outfit = /datum/outfit/job/frontiersmen/doctor/corpse
+	
 
 /obj/effect/mob_spawn/human/corpse/frontier/surgeon/internals
 	outfit = /datum/outfit/job/frontiersmen/doctor/corpse/internals
 
 /datum/outfit/job/frontiersmen/doctor/corpse
 	name = "Frontiersmen Surgeon Corpse"
-	r_pocket = null
-	ears = null
+	r_hand = /obj/item/gun/syringe
+	id = /obj/item/storage/wallet/drop/welloff/generic
+	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
+
 
 /datum/outfit/job/frontiersmen/doctor/corpse/internals
 	name = "Frontiersmen Surgeon Corpse Internals"
@@ -57,6 +71,8 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
+	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
+	belt = /obj/item/storage/box/ammo/a12g_buckshot
 
 /datum/outfit/frontier/trooper/space
 	name = "Frontiersman Armored Space Corpse"
@@ -73,6 +89,7 @@
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
 	name = "Frontiersman Officer"
 	outfit = /datum/outfit/frontier/officer
+	
 
 /datum/outfit/frontier/officer
 	name = "Frontiersman Officer Corpse"
@@ -81,10 +98,14 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/frontier/peaked
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/mauler
+	belt = /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo
+	id = /obj/item/storage/wallet/drop/rich/generic
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
 	name = "Frontiersman Officer Corpse Internals"
 	outfit = /datum/outfit/frontier/officer/internals
+
 
 /datum/outfit/frontier/officer/internals
 	name = "Frontiersman Officer Corpse Internals"
@@ -98,6 +119,9 @@
 	name = "Frontiersman Heavy Corpse"
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	id = /obj/item/storage/wallet/drop/welloff/generic
+	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
+	belt = /obj/item/ammo_box/magazine/m12_shredder
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
 	outfit = /datum/outfit/frontier/trooper/heavy/internals
@@ -114,7 +138,8 @@
 	name = "Frontiersman Flametrooper Corpse"
 	ears = null
 	back = null
-	belt = /obj/item/storage/belt/security/military/frontiersmen
+	belt = /obj/item/storage/belt/security/military/frontiersmen/flamer
 	l_hand = null
 	backpack_contents = null
 	box = null
+	r_hand = /obj/item/flamethrower
