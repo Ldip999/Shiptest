@@ -1563,3 +1563,15 @@
 
 /obj/item/circuitboard/machine/turret/ruin
 	def_components = list(/obj/item/gun/energy = /obj/item/stack/sheet/metal)
+
+
+
+/obj/item/circuitboard/machine/mineral/processing_unit
+	name = "Furnace (Machine Board)"
+	build_path = /obj/machinery/mineral/processing_unit
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 4,
+		/obj/item/stock_parts/micro_laser = 6
+	)
+
+

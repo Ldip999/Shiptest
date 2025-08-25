@@ -141,6 +141,7 @@
 	var/datum/techweb/stored_research
 	///Proximity monitor associated with this atom, needed for proximity checks.
 	var/datum/proximity_monitor/proximity_monitor
+	circuit = /obj/item/circuitboard/machine/mineral/processing_unit
 
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()
@@ -166,11 +167,16 @@
 	if(QDELETED(O))
 		return
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-	var/material_amount = materials.get_item_material_amount(O)
+	var/modifier = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		modifier += M.rating
+	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
+		modifier += L.rating
+	var/material_amount = materials.get_item_material_amount(O) * (modifier / 10)
 	if(!materials.has_space(material_amount))
 		unload_mineral(O)
 	else
-		materials.insert_item(O)
+		materials.insert_item(O, (modifier / 10))
 		qdel(O)
 		if(CONSOLE)
 			CONSOLE.updateUsrDialog()
@@ -282,5 +288,13 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.retrieve_all()
 	..()
+
+
+/obj/machinery/mineral/processing_unit/outpost
+	name = "outpost furnace"
+
+/obj/machinery/mineral/processing_unit/outpost/Initialize()
+	. = ..()
+	component_parts = list(new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,new /obj/item/stock_parts/micro_laser/quadultra,/obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto, /obj/item/stock_parts/manipulator/femto)
 
 #undef SMELT_AMOUNT

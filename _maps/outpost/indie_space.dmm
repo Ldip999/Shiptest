@@ -1615,12 +1615,12 @@
 /turf/open/floor/plating/asteroid,
 /area/outpost/external)
 "hr" = (
-/obj/machinery/mineral/processing_unit{
-	output_dir = 4;
-	input_dir = 2
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/platform/ship_two/corner,
+/obj/machinery/mineral/processing_unit/outpost{
+	input_dir = 2;
+	output_dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/cargo)
 "ht" = (

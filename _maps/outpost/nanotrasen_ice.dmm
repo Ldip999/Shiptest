@@ -4420,7 +4420,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms/office)
 "zL" = (
-/obj/machinery/mineral/processing_unit{
+/obj/machinery/mineral/processing_unit/outpost{
 	input_dir = 8
 	},
 /turf/open/floor/plasteel/dark,
