@@ -26,6 +26,13 @@
 	caliber = "7.62x40mm"
 	max_ammo = 5
 
+/obj/item/ammo_box/magazine/internal/boltaction/mosin
+	name = "mosin inner magazine"
+	ammo_type = /obj/item/ammo_casing/c762_54R
+	caliber = "7.62x54R"
+	max_ammo = 5
+	multiload = TRUE
+
 /obj/item/ammo_box/magazine/internal/vickland
 	name = "Vickland battle rifle internal magazine"
 	ammo_type = /obj/item/ammo_casing/a8_50r

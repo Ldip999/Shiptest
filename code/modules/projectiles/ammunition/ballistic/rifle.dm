@@ -129,3 +129,11 @@
 	caliber = ".299 caseless"
 	projectile_type = /obj/projectile/bullet/c299
 	stack_size = 15
+
+/obj/item/ammo_casing/c762_54R
+	name = "7.62x54 rimmed bullet casing"
+	desc = "A 7.62x54 rimmed bullet casing."
+	icon_state = "rifle-brass"
+	caliber = "7.62x54R"
+	projectile_type = /obj/projectile/bullet/c762_54R
+	stack_size = 10
