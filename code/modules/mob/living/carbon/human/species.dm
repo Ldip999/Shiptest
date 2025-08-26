@@ -1387,9 +1387,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.adjustToxLoss(-healing, 0)
 				H.adjustBruteLoss(-healing, 0)
 				H.adjustFireLoss(-healing, 0)
-		if(H.nutrition < NUTRITION_LEVEL_STARVING)
-			H.adjustBruteLoss(1, 0)
-			H.adjustFireLoss(1, 0)
+		if(H.nutrition < NUTRITION_LEVEL_STARVING && HAS_TRAIT(H,TRAIT_AGGROMETABOLISM))
+			H.adjustBruteLoss(0.5, 0)
+			H.adjustFireLoss(0.5, 0)
 
 	if (H.nutrition > NUTRITION_LEVEL_FULL)
 		if(H.overeatduration < 600) //capped so people don't take forever to unfat
