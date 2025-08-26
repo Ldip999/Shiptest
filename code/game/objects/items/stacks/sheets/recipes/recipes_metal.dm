@@ -250,5 +250,10 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("chest press", /obj/structure/weightmachine/stacklifter, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("bench press", /obj/structure/weightmachine/weightlifter, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
-	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25)
+	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25),
+	new/datum/stack_recipe_list("Arrow heads", list( \
+		new/datum/stack_recipe("regular arrowhead", /obj/item/stack/arrowhead, 2, 1, 25, time = 2.5 SECONDS), \
+		/* TODO: THIS THING /new/datum/stack_recipe("bludgeoning arrowhead", /obj/item/stack/arrowhead/bludgeon, 1, 1, 25, time = 1 SECONDS), \*/
+		new/datum/stack_recipe("field arrowhead", /obj/item/stack/arrowhead/field, 1, 1, 25, time = 1 SECONDS) \
+	))\
 ))

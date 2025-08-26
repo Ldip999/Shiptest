@@ -196,6 +196,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+
+
+/datum/crafting_recipe/longbow
+	name = "Long Bow"
+	result = /obj/item/gun/ballistic/bow
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 2,
+				/obj/item/weaponcrafting/clothstring = 1)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /*/datum/crafting_recipe/pipebow
 	name = "Pipe Bow"
 	result = /obj/item/gun/ballistic/bow/pipe

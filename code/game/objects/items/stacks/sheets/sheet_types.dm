@@ -155,8 +155,9 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("wooden railing", /obj/structure/railing/wood, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("wooden railing corner", /obj/structure/railing/corner/wood, 1, time = 10, window_checks = TRUE), \
-	new /datum/stack_recipe("wooden computer frame", /obj/structure/frame/computer/solgov, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden computer frame", /obj/structure/frame/computer/solgov, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("planter box", /obj/machinery/hydroponics/wooden, 5, time = 8 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("arrow shaft", /obj/item/arrow_shaft, 1, time = 0.5 SECONDS), \
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -265,6 +266,8 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("23x19 canvas", /obj/item/canvas/twentythreeXnineteen, 4), \
 	new/datum/stack_recipe("23x23 canvas", /obj/item/canvas/twentythreeXtwentythree, 5), \
 	new/datum/stack_recipe("punching bag", /obj/structure/punching_bag, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
+	null, \
+	new/datum/stack_recipe("cloth string", /obj/item/weaponcrafting/clothstring, 1), \
 	))
 
 /obj/item/stack/sheet/cotton/cloth
@@ -512,7 +515,9 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 
 GLOBAL_LIST_INIT(bone_recipes, list( \
 	new /datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/bone, 3), \
-	new /datum/stack_recipe("bone dagger", /obj/item/melee/knife/bone, 2)))
+	new /datum/stack_recipe("bone dagger", /obj/item/melee/knife/bone, 2),\
+	new /datum/stack_recipe("bone arrowhead", /obj/item/stack/arrowhead/bone, 1, 1, 25, time = 2 SECONDS)\
+	))
 
 /obj/item/stack/sheet/bone
 	name = "bones"
