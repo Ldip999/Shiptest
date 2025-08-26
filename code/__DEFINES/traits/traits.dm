@@ -358,6 +358,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PINPOINT_EYES "pinpoint_eyes"
 #define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
 #define TRAIT_GOOD_CHEMICAL_NIGHTVISION "good_chemical_nightvision"
+#define TRAIT_AGGROMETABOLISM "aggrometabolism"
 
 ///Trait for dryable items
 #define TRAIT_DRYABLE "trait_dryable"

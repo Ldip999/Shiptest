@@ -32,7 +32,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("(Language) Moth Pidgin", "(Language) Solarian International", "(Language) Teceti Unified Standard", "(Language) Kalixcian Common"), \
 		)
 
-	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
+	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE), "Aggressive metabolism" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
 
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()

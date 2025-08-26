@@ -3729,4 +3729,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "code\datums\traits\neutral\aggrometabolism.dm"
 // END_INCLUDE
