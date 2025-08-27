@@ -24,8 +24,8 @@
 	. = ..()
 	if(!.)
 		var/obj/item/held_item = get_active_held_item()
-		to_chat(usr, span_warning("Your other hand is too busy holding [held_item]."))
-		return
+		var/datum/component/two_handed/th = held_item.GetComponent(/datum/component/two_handed)
+		th.unwield(src)
 
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
