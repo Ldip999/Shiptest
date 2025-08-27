@@ -160,5 +160,5 @@
 			heal_reservoir += 0.01
 	if(HAS_TRAIT(src,TRAIT_FIELDMEDIC))
 		if(heal_reservoir < 20)
-			heal_reservoir += 0.05
+			heal_reservoir += 0.04
 #undef BODYTEMP_DIVISOR
