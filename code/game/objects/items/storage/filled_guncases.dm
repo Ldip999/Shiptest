@@ -70,8 +70,13 @@
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
+	name = "R-23 \"Viper\""
+	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions during the ICW, still favored by captains and high-ranking officers of the former Syndicate. Chambered in .357 Magnum."
 	gun_type = /obj/item/gun/ballistic/revolver/viper
 	mag_type = /obj/item/ammo_box/a357/empty
+
+/obj/item/storage/guncase/pistol/a357/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
 
 /obj/item/storage/guncase/pistol/viper
 	gun_type = /obj/item/gun/ballistic/revolver/viper/indie
@@ -82,16 +87,40 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
 /obj/item/storage/guncase/pistol/pc76
+	name = "PC-76 \"Ringneck\""
+	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10x22mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/pc76/wammo
+	ammo_box = /obj/item/storage/box/ammo/c10mm
+
 /obj/item/storage/guncase/pistol/asp
+	name = "BC-81 \"Asp\""
+	desc = "An armor-piercing combat handgun once used by Syndicate strike teams, now primarily used by descendants of the Gorlex Marauders. Chambered in 5.7mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/asp
 	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
 
+/obj/item/storage/guncase/pistol/asp/wammo
+	ammo_box = /obj/item/storage/box/ammo/c57x39
+
 /obj/item/storage/guncase/pistol/rattlesnake
+	name = "MP-84 \"Rattlesnake\""
+	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9x18mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+
+/obj/item/storage/guncase/pistol/rattlesnake/wammo
+	ammo_box = /obj/item/storage/box/ammo/c9mm
+
+/obj/item/storage/guncase/pistol/himehabu
+	name = "PC-81 \"Himehabu\""
+	desc = "An astonishingly compact machine pistol firing ultra-light projectiles, designed to be as small and concealable as possible while remaining a credible threat at very close range. Armor penetration is practically non-existent. Chambered in .22."
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+
+/obj/item/storage/guncase/pistol/himehabu/wammo
+	ammo_box = /obj/item/storage/box/ammo/c22lr
 
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
