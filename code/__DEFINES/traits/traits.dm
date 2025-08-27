@@ -524,5 +524,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_VETDOC "trait_vetdoc"
 #define TRAIT_FIELDMEDIC "trait_fieldmedic"
 
+#define TRAIT_ARMOR_AVERSION "trait_armor_aversion"
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"
