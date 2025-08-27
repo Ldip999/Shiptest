@@ -27,7 +27,7 @@
 /obj/item/ammo_casing/caseless/arrow/flint
 	name = "flint arrow"
 	desc = "a primitive arrow with a head made of knapped flint."
-	projectile_type = /obj/projectile/bullet/reusable/arrow/bone
+	projectile_type = /obj/projectile/bullet/reusable/arrow/flint
 	icon_state = "flint"
 
 /obj/item/ammo_casing/caseless/arrow/bodkin
