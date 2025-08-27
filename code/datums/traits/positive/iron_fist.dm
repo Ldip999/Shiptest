@@ -19,7 +19,7 @@
 /datum/quirk/steel_fist
 	name = "Fists of Steel"
 	desc = "You have MASSIVE fists of kung-fury! Even MORE increases unarmed damage."
-	value = 2
+	value = 3
 	gain_text = span_notice("I trained in a barn")
 	lose_text = span_danger("I no longer remember my roots in Duranda")
 	medical_record_text = "Patient has accidentally destroyed the door handle to my office. A replacement is needed."
