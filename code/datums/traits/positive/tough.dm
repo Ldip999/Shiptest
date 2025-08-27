@@ -17,7 +17,7 @@
 	H.health -= 10
 
 /datum/quirk/lifegiverplus
-	name = "Health - Very Though"
+	name = "Health - Very Tough"
 	desc = "You have +20 health. What this actually means is that you need to take twenty more points of damage before you go into crit. "
 	value = 6
 	gain_text = span_notice("You feel very durable.")

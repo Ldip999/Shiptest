@@ -64,6 +64,8 @@
 	if(machine)
 		machine.check_eye(src)
 
+	handle_healreservoir()
+
 	if(stat != DEAD)
 		return 1
 
@@ -152,4 +154,11 @@
 		var/grav_stregth = gravity - GRAVITY_DAMAGE_TRESHOLD
 		adjustBruteLoss(min(grav_stregth,3))
 
+/mob/living/proc/handle_healreservoir()
+	if(HAS_TRAIT(src,TRAIT_VETDOC))
+		if(heal_reservoir < 5)
+			heal_reservoir += 0.01
+	if(HAS_TRAIT(src,TRAIT_FIELDMEDIC))
+		if(heal_reservoir < 20)
+			heal_reservoir += 0.05
 #undef BODYTEMP_DIVISOR

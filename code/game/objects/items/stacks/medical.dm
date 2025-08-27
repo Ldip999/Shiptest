@@ -488,3 +488,19 @@
 	amount = 1
 	splint_type = /datum/bodypart_aid/splint/improvised_metal
 	merge_type = /obj/item/stack/medical/splint/improvised_metal
+
+/obj/item/stack/medical/bruise_pack/fieldtend
+	name = "a bunch of scavanged medical supplies"
+	singular_name = "scavanged medical supplies"
+	desc = "A measure of haphazardly thrown together supplies to be used for medical purposes. Good for both burns and bruises."
+	icon_state = "brutepack"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	heal_brute = 5
+	heal_burn = 5
+	amount = 1
+	max_amount = 5
+	self_delay = 2 SECONDS
+	other_delay = 2 SECONDS
+	experience_given = 4
+	merge_type = /obj/item/stack/medical/bruise_pack/fieldtend

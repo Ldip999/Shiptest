@@ -255,6 +255,8 @@
 	ouchie_mod *= clamp(1-target.get_drunk_amount()/SURGERY_DRUNK_MOD, 0, 1) // Drunkenness up to 40% (points? idk) will improve chances of avoiding horrible pain and suffering
 	if(target.stat == UNCONSCIOUS) // Being "normally" asleep will SLIGHTLY improve your chances since it's intuitive behavior barring access to anything else
 		ouchie_mod *= target.getOxyLoss() >= 50 ? 0.6 : 0.8 // Being choked out will slightly improve chances on top of that. Emergent gameplay! (people already do this)
+	if(HAS_TRAIT(user, TRAIT_FIELDMEDIC))
+		ouchie_mod -= 0.5
 	var/final_ouchie_chance = SURGERY_FUCKUP_CHANCE * ouchie_mod
 	if(!prob(final_ouchie_chance))
 		return
