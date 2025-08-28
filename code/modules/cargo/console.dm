@@ -82,6 +82,7 @@
 		generate_pack_data()
 	else
 		supply_pack_data = list()
+	.["supplies"] = supply_pack_data
 
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/list/data = list()
@@ -99,7 +100,6 @@
 		message = blockade_warning
 		data["blockade"] = TRUE
 	data["message"] = message
-	data["supplies"] = supply_pack_data
 
 	data["shipMissions"] = list()
 	data["outpostMissions"] = list()
