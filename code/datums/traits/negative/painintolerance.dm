@@ -7,4 +7,4 @@
 
 /datum/quirk/weakpaintolerance/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.crit_threshold += 50
+	H.crit_threshold += 25
