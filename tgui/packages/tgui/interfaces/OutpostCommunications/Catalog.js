@@ -1,6 +1,6 @@
 import { flow } from 'common/fp';
 import { filter, sortBy } from 'common/collections';
-import { useBackend, useSharedState } from '../../backend';
+import { useBackend, useSharedState, useLocalState } from '../../backend';
 import {
   Box,
   Button,
@@ -22,7 +22,7 @@ export const CargoCatalog = (props, context) => {
 
   const supplies = Object.values(data.supplies);
 
-  const [activeSupplyName, setActiveSupplyName] = useSharedState(
+  const [activeSupplyName, setActiveSupplyName] = useLocalState(
     context,
     'supply',
     supplies[0]?.name
@@ -138,13 +138,13 @@ export const CargoCatalog = (props, context) => {
                         }
                         setSearchText(value);
                       }}
-                      onChange={(e, value) => {
+                      /* onChange={(e, value) => {
                         // Allow edge cases like the X button to work
-                        const onInput = e.target?.props?.onInput;
+                         const onInput = e.target?.props?.onInput;
                         if (onInput) {
                           onInput(e, value);
                         }
-                      }}
+                      }}*/
                     />
                   </Stack.Item>
                 </Stack>
