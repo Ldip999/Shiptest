@@ -359,6 +359,11 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
 #define TRAIT_GOOD_CHEMICAL_NIGHTVISION "good_chemical_nightvision"
 #define TRAIT_AGGROMETABOLISM "aggrometabolism"
+#define TRAIT_BRUTEWEAK "brute_weakness"
+#define TRAIT_BRUTEWEAKMAJOR "brute_weakness_major"
+#define TRAIT_BURNWEAK "burn_weakness"
+#define TRAIT_BURNWEAKMAJOR "burn_weakness_major"
+
 
 ///Trait for dryable items
 #define TRAIT_DRYABLE "trait_dryable"

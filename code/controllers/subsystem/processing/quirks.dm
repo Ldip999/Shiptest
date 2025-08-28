@@ -31,7 +31,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Self-Aware", "Congenital Analgesia"), \
 		list("(Language) Moth Pidgin", "(Language) Solarian International", "(Language) Teceti Unified Standard", "(Language) Kalixcian Common"), \
 		list("Health - Tough", "Health - Very Tough", "Health - Flimsy", "Health - Very Flimsy"),\
-		list("Fists of Iron" , "Fists of Steel")\
+		list("Fists of Iron" , "Fists of Steel"),\
+		list("Brute Weakness, Minor", "Brute Weakness, Major"),\
+		list("Burn Weakness, Minor", "Burn Weakness, Major")\
 		)
 
 	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE), "Aggressive metabolism" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
