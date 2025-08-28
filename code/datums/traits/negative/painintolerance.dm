@@ -1,6 +1,6 @@
 /datum/quirk/weakpaintolerance
 	name = "Pain Tolerance - Weak"
-	desc = "Your pain tolerance is really low. You go into crit 50 damage points earlier than you should"
+	desc = "Your pain tolerance is really low. You go into crit 25 damage points earlier than you should"
 	gain_text = span_danger("You feel wimpy...")
 	lose_text = span_notice("You feel stronger.")
 	value = -5

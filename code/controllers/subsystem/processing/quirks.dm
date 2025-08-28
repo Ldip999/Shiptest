@@ -34,7 +34,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Fists of Iron" , "Fists of Steel"),\
 		list("Brute Weakness, Minor", "Brute Weakness, Major"),\
 		list("Burn Weakness, Minor", "Burn Weakness, Major"),\
-		list("Pain Tolerance - Weak", "Congenital Analgesia")
+		list("Pain Tolerance - Weak", "Congenital Analgesia"), \
+		list("Fat-Fingered", "Gunslinger")\
 		)
 
 	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE), "Aggressive metabolism" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))

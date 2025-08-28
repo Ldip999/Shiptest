@@ -18,7 +18,7 @@
 	name = "Brute Weakness, Major"
 	desc = "You're much weaker to physical trauma than others, taking 20% extra brute damage"
 	mob_traits = list(TRAIT_BRUTEWEAKMAJOR)
-	value = -3
+	value = -4
 
 /datum/quirk/bruteweakmajor/add()
 	var/mob/living/carbon/human/H = quirk_holder
