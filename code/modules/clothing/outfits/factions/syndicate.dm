@@ -78,6 +78,8 @@
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
 
+/datum/outfit/job/syndicate/assistant/cybersun/anomaly
+
 /datum/outfit/job/syndicate/assistant/twink
 	name = "Syndicate - Deck Assistant (Twinkleshine)"
 	id_assignment = "Deck Assistant"
@@ -336,6 +338,18 @@
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
 	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
+	
+	
+
+/datum/outfit/job/syndicate/captain/cybersun/anomaly
+	suit = null
+	head = null
+	gloves = null
+	shoes = null
+	head = null
+	gloves = null
+	suit = null
+
 
 /datum/outfit/job/syndicate/captain/suns
 	name = "Syndicate - Captain (SUNS)"
@@ -1079,6 +1093,11 @@
 	head = /obj/item/clothing/head/soft/cybersun
 	r_pocket = /obj/item/radio
 
+/datum/outfit/job/syndicate/miner/cybersun/anomaly
+	r_pocket = null
+	shoes = null
+	backpack_contents = list()
+
 /datum/outfit/job/syndicate/miner/gec
 	name = "Syndicate - Shaft Miner (GEC)"
 
@@ -1184,6 +1203,13 @@
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
 	accessory = /obj/item/clothing/accessory/armband/engine
+
+/datum/outfit/job/syndicate/engineer/cybersun/anomaly
+	shoes = null
+	r_pocket = null
+	glasses = null
+	belt = null
+	box = null
 
 /datum/outfit/job/syndicate/engineer/suns
 	name = "Syndicate - Ship Engineer (SUNS)"

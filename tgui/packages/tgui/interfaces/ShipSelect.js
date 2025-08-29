@@ -196,7 +196,6 @@ export const ShipSelect = (props, context) => {
                   <Table.Cell>Job Name</Table.Cell>
                   <Table.Cell>Slots</Table.Cell>
                   <Table.Cell>Min. Playtime</Table.Cell>
-                  <Table.Cell>Anomaly Loadout</Table.Cell>
                 </Table.Row>
                 {selectedShip.jobs.map((job) => (
                   <Table.Row key={job.name}>
@@ -227,7 +226,6 @@ export const ShipSelect = (props, context) => {
                     <Table.Cell>
                       {formatShipTime(job.minTime, data.playMin, data.autoMeet)}
                     </Table.Cell>
-                    <Table.Cell>{job.anomalyLoadout}</Table.Cell>
                   </Table.Row>
                 ))}
               </Table>

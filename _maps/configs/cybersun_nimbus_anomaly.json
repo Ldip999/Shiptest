@@ -19,20 +19,24 @@
 	],
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"anomaly_loadout": "/datum/anomalyloadout/syndicate/cybersun/captain",
+			"outfit": "/datum/outfit/job/syndicate/captain/cybersun/anomaly",
 			"officer": true,
 			"slots": 1
 		},
 		"Troubleshooter": {
-			"outfit": "/datum/outfit/job/syndicate/miner/cybersun",
+			"anomaly_loadout": "/datum/anomalyloadout/syndicate/cybersun/miner",
+			"outfit": "/datum/outfit/job/syndicate/miner/cybersun/anomaly",
 			"slots": 2
 		},
 		"Technician": {
-			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"anomaly_loadout": "/datum/anomalyloadout/syndicate/cybersun/engineer",
+			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun/anomaly",
 			"slots": 1
 		},
 		"Ship's Aide": {
-			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"anomaly_loadout": "/datum/anomalyloadout/syndicate/assistant/assistant",
+			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun/anomaly",
 			"slots": 1
 		}
 	},

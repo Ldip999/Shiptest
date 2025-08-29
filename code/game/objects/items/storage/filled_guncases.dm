@@ -3,7 +3,12 @@
 /* Hunter's Pride */
 
 /obj/item/storage/guncase/pistol/firebrand
+	name = "HP Firebrand"
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	gun_type = /obj/item/gun/ballistic/revolver/firebrand
+
+/obj/item/storage/guncase/pistol/firebrand/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
 
 /obj/item/storage/guncase/pistol/derringer
 	gun_type = /obj/item/gun/ballistic/derringer
@@ -13,15 +18,28 @@
 	mag_type = /obj/item/ammo_box/a44roum_speedloader
 
 /obj/item/storage/guncase/pistol/candor
+	name = "Candor"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
 	mag_type = /obj/item/ammo_box/magazine/m45
 
+/obj/item/storage/guncase/pistol/candor/wammo
+	ammo_box = /obj/item/storage/box/ammo/c45
+
 /obj/item/storage/guncase/pistol/detective
+	name = "HP Detective Special"
+	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	gun_type = /obj/item/gun/ballistic/revolver/detective
 	mag_type = /obj/item/ammo_box/c38
 
+/obj/item/storage/guncase/pistol/detective/wammo
+	ammo_box = /obj/item/storage/box/ammo/c38
+
 /obj/item/storage/guncase/pistol/shadow
 	gun_type = /obj/item/gun/ballistic/revolver/shadow
+
+/obj/item/storage/guncase/pistol/shadow/wammo
+	ammo_box = /obj/item/storage/box/ammo/a44roum
 
 /obj/item/storage/guncase/pistol/ashhand
 	gun_type = /obj/item/gun/ballistic/revolver/ashhand
@@ -79,12 +97,22 @@
 	ammo_box = /obj/item/storage/box/ammo/a357
 
 /obj/item/storage/guncase/pistol/viper
+	name = "Viper-23"
+	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
 	gun_type = /obj/item/gun/ballistic/revolver/viper/indie
 	mag_type = /obj/item/ammo_box/a357/empty
 
+/obj/item/storage/guncase/pistol/viper/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
+
 /obj/item/storage/guncase/pistol/ringneck
+	name = "Ringneck-76"
+	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10x22mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+
+/obj/item/storage/guncase/pistol/ringneck/wammo
+	ammo_box = /obj/item/storage/box/ammo/c10mm
 
 /obj/item/storage/guncase/pistol/pc76
 	name = "PC-76 \"Ringneck\""
@@ -199,8 +227,13 @@
 	mag_type = /obj/item/ammo_box/magazine/m17
 
 /obj/item/storage/guncase/pistol/m20_auto_elite
+	name = "Model 20 \"Auto Elite\""
+	desc = "A large handgun chambered .44 Roumain. Originally developed by Serene Outdoors for the Star City Police Department when their older handguns proved underpowered, the Auto Elite proved heavy and unwieldy in practice. It has nevertheless seen modest success as a sidearm for big game hunters and among customers looking to make an impression."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite
 	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
+
+/obj/item/storage/guncase/pistol/m20_auto_elite/wammo
+	ammo_box = /obj/item/storage/box/ammo/a44roum
 
 /obj/item/storage/guncase/m12
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
@@ -248,8 +281,13 @@
 /* VI */
 
 /obj/item/storage/guncase/pistol/commander
+	name = "VI Commander"
+	desc = "A service pistol produced as Vigilitas Interstellar's standard sidearm. Has a reputation for being easy to use, due to its light recoil and high magazine capacity. Chambered in 9x18mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander
 	mag_type = /obj/item/ammo_box/magazine/co9mm
+
+/obj/item/storage/guncase/pistol/commander/wammo
+	ammo_box = /obj/item/storage/box/ammo/c9mm
 
 /obj/item/storage/guncase/vector
 	gun_type = /obj/item/gun/ballistic/automatic/smg/vector
