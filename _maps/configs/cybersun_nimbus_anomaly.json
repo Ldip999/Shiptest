@@ -35,7 +35,7 @@
 			"slots": 1
 		},
 		"Ship's Aide": {
-			"anomaly_loadout": "/datum/anomalyloadout/syndicate/assistant/assistant",
+			"anomaly_loadout": "/datum/anomalyloadout/syndicate/cybersun/assistant",
 			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun/anomaly",
 			"slots": 1
 		}
