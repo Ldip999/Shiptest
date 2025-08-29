@@ -34,18 +34,6 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/half{
 	dir = 8
 	},
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/medical{
-	pixel_x = -4
-	},
-/obj/item/hypospray/mkii/tricord{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord,
-/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord{
-	pixel_x = -5
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "aL" = (
@@ -168,47 +156,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "dn" = (
-/obj/structure/closet/secure_closet/engineering_electrical{
-	populate = 0
-	},
-/obj/item/stack/tape/industrial/electrical{
-	pixel_y = -8;
-	pixel_x = -6
-	},
-/obj/item/stack/tape/industrial/electrical{
-	pixel_x = -8
-	},
-/obj/item/storage/toolbox/electrical{
-	pixel_y = -5;
-	pixel_x = 8
-	},
-/obj/item/storage/toolbox/electrical{
-	pixel_y = -10;
-	pixel_x = 8
-	},
-/obj/item/multitool{
-	pixel_x = -8;
-	pixel_y = -7
-	},
-/obj/item/stack/cable_coil/cyan{
-	pixel_y = 4
-	},
-/obj/item/stack/cable_coil/cyan{
-	pixel_y = 7
-	},
-/obj/item/multitool{
-	pixel_x = -8;
-	pixel_y = -7
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
-	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_y = -1
-	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
@@ -673,21 +623,6 @@
 /area/ship/crew/dorm)
 "nQ" = (
 /obj/structure/closet/wall/directional/south,
-/obj/item/tank/internals/oxygen/red{
-	pixel_x = 5
-	},
-/obj/item/tank/internals/oxygen/red{
-	pixel_y = -7;
-	pixel_x = 9
-	},
-/obj/item/clothing/suit/space/eva{
-	pixel_y = -6;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_x = -3;
-	pixel_y = 4
-	},
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -930,19 +865,12 @@
 	pixel_y = 10;
 	pixel_x = 5
 	},
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun{
-	pixel_x = -5
-	},
 /obj/item/clothing/suit/cybersun_suit{
 	pixel_x = -6
 	},
 /obj/item/clothing/under/syndicate/cybersun/officer{
 	pixel_x = 8
 	},
-/obj/item/clothing/shoes/jackboots{
-	pixel_y = -7
-	},
-/obj/item/clothing/gloves/combat,
 /obj/item/clothing/head/HoS/cybersun{
 	pixel_y = 8
 	},
@@ -1160,17 +1088,6 @@
 /obj/item/clothing/under/syndicate/cybersun{
 	pixel_y = -5
 	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -9;
-	pixel_x = 9
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -9;
-	pixel_x = -9
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -9
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "vD" = (
@@ -1283,47 +1200,6 @@
 	},
 /obj/structure/closet/wall/orange/directional/north{
 	name = "technician's closet"
-	},
-/obj/item/clothing/under/syndicate/cybersun/research{
-	pixel_y = 9
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = 1
-	},
-/obj/item/clothing/head/soft/cybersun{
-	pixel_y = 9;
-	pixel_x = 4
-	},
-/obj/item/storage/toolbox/syndicate{
-	pixel_y = 6
-	},
-/obj/item/storage/belt/utility/syndicate,
-/obj/item/clothing/gloves/combat{
-	pixel_y = 5
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_y = 13;
-	pixel_x = -6
-	},
-/obj/item/storage/backpack/industrial{
-	pixel_y = 5;
-	pixel_x = 7
-	},
-/obj/item/clothing/suit/hazardvest{
-	pixel_y = 5;
-	pixel_x = 7
-	},
-/obj/item/clothing/under/syndicate/gec{
-	pixel_x = -12;
-	pixel_y = -9
-	},
-/obj/item/clothing/suit/toggle/industrial{
-	pixel_x = 7;
-	pixel_y = -8
-	},
-/obj/item/clothing/mask/gas/syndicate{
-	pixel_x = -4;
-	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -1523,7 +1399,6 @@
 "CF" = (
 /obj/effect/turf_decal/box/white,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/tank/jetpack,
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
 	dir = 8
 	},
@@ -1531,8 +1406,6 @@
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = -28
 	},
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
-/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Df" = (
@@ -1618,23 +1491,6 @@
 /area/ship/cargo)
 "Fe" = (
 /obj/structure/table/chem,
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "weapons closet";
-	req_access_txt = "48"
-	},
-/obj/item/storage/guncase/pistol/rattlesnake,
-/obj/item/storage/guncase/pistol/rattlesnake{
-	pixel_y = 6
-	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_x = -5;
-	pixel_y = 8
-	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_x = -5;
-	pixel_y = -1
-	},
 /obj/machinery/cell_charger{
 	pixel_y = 6;
 	pixel_x = 1
@@ -1847,29 +1703,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Hu" = (
-/obj/structure/closet/secure_closet/engineering_welding{
-	populate = 0
-	},
-/obj/item/weldingtool/electric{
-	pixel_y = -4;
-	pixel_x = -4
-	},
-/obj/item/weldingtool/electric{
-	pixel_y = -4;
-	pixel_x = 4
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = 9;
-	pixel_y = -10
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_y = -4;
-	pixel_x = 9
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_y = 2;
-	pixel_x = 9
-	},
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
@@ -1878,14 +1711,6 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 10
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_y = 13;
-	pixel_x = -6
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_y = 7;
-	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
@@ -1995,14 +1820,11 @@
 "Jf" = (
 /obj/effect/turf_decal/box/white,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/tank/jetpack,
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/airalarm/directional/north,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
-/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Jo" = (
@@ -2299,23 +2121,6 @@
 	req_access_txt = "48";
 	name = "equipment locker"
 	},
-/obj/item/storage/backpack/duffelbag/syndie/c4,
-/obj/item/binoculars{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/binoculars{
-	pixel_y = 10;
-	pixel_x = -6
-	},
-/obj/item/pickaxe/drill/jackhammer/old{
-	pixel_x = 9;
-	pixel_y = 3
-	},
-/obj/item/attachment/energy_bayonet,
-/obj/item/attachment/energy_bayonet{
-	pixel_x = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "QV" = (
@@ -2552,28 +2357,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 5
-	},
-/obj/structure/closet/emcloset/wall/directional/south{
-	populate = 0
-	},
-/obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 5
-	},
-/obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/tank/internals/emergency_oxygen{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/tank/internals/emergency_oxygen{
-	pixel_x = -4;
-	pixel_y = -5
-	},
-/obj/item/tank/internals/emergency_oxygen{
-	pixel_x = -4;
-	pixel_y = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2846,11 +2629,6 @@
 	number_of_tumblers = 3;
 	tumblers = list(45,27,54)
 	},
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/clothing/suit/space/hardsuit/syndi/cybersun,
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/item/reagent_containers/food/drinks/flask,
 /obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
@@ -2874,7 +2652,6 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/east,
-/obj/structure/closet/crate/rations,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "ZG" = (
