@@ -538,6 +538,7 @@
 #include "code\datums\ai\movement\ai_movement_dumb.dm"
 #include "code\datums\ai\movement\ai_movement_jps.dm"
 #include "code\datums\anomaly_loadout\anomaly_loadouts.dm"
+#include "code\datums\anomaly_loadout\faction_inits.dm"
 #include "code\datums\armor\_armor.dm"
 #include "code\datums\armor\_atom_armor.dm"
 #include "code\datums\atmosphere\_atmosphere.dm"

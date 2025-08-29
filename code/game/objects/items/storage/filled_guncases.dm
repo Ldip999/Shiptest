@@ -13,6 +13,9 @@
 /obj/item/storage/guncase/pistol/derringer
 	gun_type = /obj/item/gun/ballistic/derringer
 
+/obj/item/storage/guncase/pistol/derringer/wammo
+	ammo_box = /obj/item/storage/box/ammo/c38
+
 /obj/item/storage/guncase/pistol/montagne
 	gun_type = /obj/item/gun/ballistic/revolver/montagne
 	mag_type = /obj/item/ammo_box/a44roum_speedloader
@@ -47,18 +50,34 @@
 /obj/item/storage/guncase/hellfire
 	gun_type = /obj/item/gun/ballistic/shotgun/hellfire
 
+/obj/item/storage/guncase/hellfire/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/doublebarrel
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel
 
+
+/obj/item/storage/guncase/doublebarrel/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
+
+/obj/item/storage/guncase/brimstone/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
 
 /obj/item/storage/guncase/illestren
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 
+/obj/item/storage/guncase/illestren/wammo
+	ammo_box = /obj/item/storage/box/ammo/a8_50r
+
 /obj/item/storage/guncase/beacon
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+
+/obj/item/storage/guncase/beacon/wammo
+	ammo_box = /obj/item/storage/box/ammo/a4570
 
 /obj/item/storage/guncase/scout
 	gun_type = /obj/item/gun/ballistic/rifle/scout
@@ -67,11 +86,20 @@
 /obj/item/storage/guncase/winchester
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow
 
+/obj/item/storage/guncase/winchester/wammo
+	ammo_box = /obj/item/storage/box/ammo/c38
+
 /obj/item/storage/guncase/conflagration
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 
+/obj/item/storage/guncase/conflagration/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+
+/obj/item/storage/guncase/absolution/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
 
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
@@ -154,9 +182,15 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
 
+/obj/item/storage/guncase/cobra/wammo
+	ammo_box = /obj/item/storage/box/ammo/c45
+
 /obj/item/storage/guncase/c20r
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+
+/obj/item/storage/guncase/c20r/wammo
+	ammo_box = /obj/item/storage/box/ammo/c45
 
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
@@ -174,13 +208,22 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 
+/obj/item/storage/guncase/bulldog/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/sidewinder
 	gun_type = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	mag_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
 
+/obj/item/storage/guncase/sidewinder/wammo
+	ammo_box = /obj/item/storage/box/ammo/c57x39
+
 /obj/item/storage/guncase/hydra
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra
+
+/obj/item/storage/guncase/hydra/wammo
+	ammo_box = /obj/item/storage/box/ammo/a556_42
 
 /obj/item/storage/guncase/sbr80
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -239,6 +282,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
 	mag_type = /obj/item/ammo_box/magazine/m12_sporter
 
+/obj/item/storage/guncase/m12/wammo
+	ammo_box = /obj/item/storage/box/ammo/c22lr
+
 /obj/item/storage/guncase/m13
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter/mod
 	mag_type = /obj/item/ammo_box/magazine/m12_sporter
@@ -248,6 +294,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/m15
 	mag_type = /obj/item/ammo_box/magazine/m15
 
+/obj/item/storage/guncase/m15/wammo
+	ammo_box = /obj/item/storage/box/ammo/a556_42
+
 /obj/item/storage/guncase/woodsman
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
 	mag_type = /obj/item/ammo_box/magazine/m23
@@ -255,6 +304,9 @@
 
 /obj/item/storage/guncase/buckmaster
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/m11
+
+/obj/item/storage/guncase/buckmaster/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
 
 /* Solar Armories */
 
@@ -329,6 +381,9 @@
 /obj/item/storage/guncase/wt550
 	gun_type = /obj/item/gun/ballistic/automatic/smg/wt550
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
+
+/obj/item/storage/guncase/wt550/wammo
+	ammo_box = /obj/item/storage/box/ammo/c46x30mm
 
 /obj/item/storage/guncase/gauss
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss
@@ -432,6 +487,9 @@
 /obj/item/storage/guncase/skm
 	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+
+/obj/item/storage/guncase/skm/wammo
+	ammo_box = /obj/item/storage/box/ammo/a762_40
 
 /obj/item/storage/guncase/skm_lmg
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
