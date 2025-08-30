@@ -167,11 +167,11 @@
 	if(QDELETED(O))
 		return
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-	var/modifier = 0
-	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+	var/modifier = 10
+	/*for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		modifier += M.rating
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
-		modifier += L.rating
+		modifier += L.rating*/
 	var/material_amount = materials.get_item_material_amount(O) * (modifier / 10)
 	if(!materials.has_space(material_amount))
 		unload_mineral(O)
