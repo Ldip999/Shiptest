@@ -337,16 +337,34 @@
 				return "ERROR: Unable to do this currently! Reduce speed or undock!"
 			if(interact_target.docked_to || interact_target.docking)
 				return "ERROR: Unable to do this currently! Target is docked or docking!"
-
+			/*
 			var/list/dockables = get_dockable_locations(src)
 			if(!dockables.len)
 				return "ERROR: No open ports on [src]."
 			choice = tgui_input_list(usr, "Select where to dock [interact_target]?", "Dock at", dockables)
 			if(!choice)
+				return "Interaction canceled."*/
+			choice = tgui_input_list(usr, "Are you sure you want to interdict [interact_target]? Both of your engines will be drained!", "Interdiction", list("Yes","Cancel"))
+			if(!choice || choice == "Cancel")
 				return "Interaction canceled."
-			return interact_target.Dock(src, choice)
+			return DoInterdiction(src, interact_target)
 	//if nothing returns, return choice?
 	return choice
+
+/datum/overmap/proc/DoInterdiction(mob/living/user, datum/overmap/interact_target)
+	var/datum/overmap/ship/controlled/interdicter = src
+	var/datum/overmap/ship/controlled/interdicted = interact_target
+	priority_announce("!!! INTERDICTING [interact_target] !!!", "ALL HANDS ON DECK, PERPARE FOR COMBAT!", 'sound/effects/Interdiction.ogg', sender_override = name, zlevel =interdicter.shuttle_port.virtual_z())
+	priority_announce("!!! BEING INTERDICTED BY [interdicter] !!!", "ALL HANDS ON DECK, PERPARE FOR COMBAT!", 'sound/effects/Interdiction.ogg', sender_override = name, zlevel = interdicted.shuttle_port.virtual_z())
+	var/datum/overmap/dynamic/empty/empty_space = locate() in current_overmap.overmap_container[x][y]
+	if(!empty_space)
+		empty_space = new(list("x" = x, "y" = y), current_overmap)
+	if(empty_space)
+		interdicter.Dock(empty_space)
+		//interdicted.Dock(empty_space)
+		addtimer(CALLBACK(interdicted, PROC_REF(Dock), empty_space, null, TRUE), dock_time*1.1)
+
+	
 
 /**
  * This handles the interaction on the target, rather than on the interactor.
