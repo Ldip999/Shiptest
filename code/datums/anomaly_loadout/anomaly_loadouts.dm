@@ -730,6 +730,28 @@
 			"price" = 3000,
 			"faction" = FALSE,
 	)
+
+/datum/anomalyloadout/independent/captain
+
+/datum/anomalyloadout/independent/captain/New()
+	. = ..()
+	loadoutpoints += 2000
+	armoroptions[/obj/item/clothing/suit/armor/captaincoat] = list(
+			"name" = "captain's fur coat",
+			"desc" = "A long, stiff commanding coat, meant for frigid conditions.",
+			"price" = 2000,
+			"faction" = TRUE,
+	)
+
+/datum/anomalyloadout/independent/miner
+	utilitycostmult = 0.5
+
+/datum/anomalyloadout/independent/assistant
+	utilitycostmult = 0.75
+
+/datum/anomalyloadout/independent/engineer
+	engineeringcostmult = 0.5
+
 /datum/anomalyloadout/syndicate
 
 
