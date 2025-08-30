@@ -81,3 +81,9 @@
 	if(do_after(user, MIN_TOOL_SOUND_DELAY, target=src))
 		enabled = !enabled
 		to_chat(user, "<span class='notice'>You [enabled ? "enable" : "disable"] [src].")
+
+/obj/machinery/power/shuttle/engine/proc/operational()
+	return TRUE
+
+/obj/machinery/power/shuttle/engine/proc/disable(time)
+	return

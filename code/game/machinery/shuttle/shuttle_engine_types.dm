@@ -205,8 +205,18 @@
 	icon_state_closed = "burst"
 	icon_state_open = "burst_open"
 	thrust = 10
+	var/disableuntil = 0
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
+
+/obj/machinery/power/shuttle/engine/electric/operational()
+	if(world.time >= disableuntil)
+		return TRUE
+	else
+		return FALSE
+	
+/obj/machinery/power/shuttle/engine/electric/disable(time)
+	disableuntil = world.time + time
 
 /obj/machinery/power/shuttle/engine/electric/bad
 	name = "Outdated Ion Thruster"

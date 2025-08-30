@@ -113,3 +113,9 @@
 #define SHIPMODULE_HELMCONSOLE "helm_console"
 #define SHIPMODULE_TRANSPONDER "transponder"
 
+//Sector types
+#define GREEN_STAR "green star" //Starter area
+#define YELLOW_STAR "yellow star" //Mid, controlled area
+#define RED_STAR "red star" //Hard, contested area
+#define BLACK_ORBIT "black orbit" //Neutral, ffa
+#define MIDNIGHT_SUN "midnight sun" //Enemy territory, such as pirate bases or infested systems

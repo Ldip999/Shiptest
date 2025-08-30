@@ -56,7 +56,10 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	//default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	default_system = create_new_star_system(new /datum/overmap_star_system/greenstar)
+	create_new_star_system(new /datum/overmap_star_system/yellowstar)
+
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
@@ -281,6 +284,8 @@ SUBSYSTEM_DEF(overmap)
 	var/starname
 	///Type of the star
 	var/datum/overmap/star/startype
+	
+	var/sector_type = YELLOW_STAR
 
 	///Defines which generator to use for the overmap
 	var/generator_type
@@ -355,7 +360,7 @@ SUBSYSTEM_DEF(overmap)
 	if(!starname)
 		starname = gen_star_name() //we reuse this for the name of the star if name isnt defined, like a uncharted sector or something
 	if(!name)
-		name = starname //we then give it here
+		name = starname + " (" + sector_type +")"//we then give it here
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
@@ -1120,3 +1125,33 @@ SUBSYSTEM_DEF(overmap)
 	The [span_notice("MODIF. OVERMAP")] tool is similar in usuage to BUILD ADV but to manipulate the overmap only.
 	"}
 	return ..()
+
+/datum/overmap_star_system/greenstar
+	
+	has_outpost = TRUE
+	encounters_refresh = TRUE
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#0f6113"
+	secondary_color = "#212529"
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+	sector_type = GREEN_STAR
+	dynamic_probabilities = list(\
+		DYNAMIC_WORLD_BEACHPLANET = 50,
+		DYNAMIC_WORLD_DESERT = 5,
+		DYNAMIC_WORLD_JUNGLE = 10,
+		DYNAMIC_WORLD_MOON = 20,
+		DYNAMIC_WORLD_ASTEROID = 20
+		)
+
+/datum/overmap_star_system/yellowstar
+	
+	has_outpost = TRUE
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#ffffdf"
+	secondary_color = "#2bc933"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+	sector_type = YELLOW_STAR
