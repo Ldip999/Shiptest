@@ -294,9 +294,17 @@
 
 	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
 		var/name = client.prefs.real_name
-		if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
+		for(var/datum/overmap/ship/controlled/shippe as anything in SSovermap.controlled_ships)
+			if(!length(ship.manifest))
+				continue
+			for(var/crewmember in ship.manifest)
+				if(name == crewmember)
+					to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
+					return FALSE
+
+		/*if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
 			to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
-			return FALSE
+			return FALSE*/
 
 	var/error = IsJobUnavailable(job, ship, check_playtime)
 	if(error != JOB_AVAILABLE)
