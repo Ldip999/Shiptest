@@ -67,11 +67,13 @@
 	///Do we selfloop? If so the borders of the map connect to the other side of the planet. Not recommended.
 	var/selfloop
 
+	var/difficulty
+
 /datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
 	SSovermap.dynamic_encounters += src
 	current_overmap.dynamic_encounters += src
-
+	difficulty = rand(system_spawned_in.rewardmult* 0.5, system_spawned_in.rewardmult*1.5)
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
 	if(load_now)

@@ -69,7 +69,7 @@
 		Acquire: The Creature
 */
 
-/datum/mission/outpost/acquire/creature
+/*/datum/mission/outpost/acquire/creature
 	name = ""
 	desc = ""
 	value = 1500
@@ -135,3 +135,4 @@
 	if(M.loc == src)
 		return FALSE
 	return ..()
+*/

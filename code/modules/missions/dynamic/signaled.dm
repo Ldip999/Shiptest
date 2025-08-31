@@ -73,6 +73,7 @@
 	return ..()
 
 /obj/machinery/drill/mission/mine_success()
+	. = ..()
 	num_current++
 
 	if(num_current == num_wanted)

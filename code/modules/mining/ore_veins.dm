@@ -29,13 +29,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Contents won't be randomized if the list isn't empty on initialize
 	var/list/vein_contents = list()
 	//Allows subtyped veins to determine how long it takes to mine one mining charge
-	var/mine_time_multiplier = 1
+	var/mine_time_multiplier = 3
 	//Allows subtyped veins to determine how much loot is dropped per drop_ore call
-	var/drop_rate_amount_min = 15
-	var/drop_rate_amount_max = 20
+	var/drop_rate_amount_min = 25
+	var/drop_rate_amount_max = 100
 	///variables for the mob spawners we generate
 	var/max_mobs = 3
-	var/spawn_time = 10 SECONDS
+	var/spawn_time = 8 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
@@ -68,7 +68,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	///how long will our spawners create mobs for?
 	var/wave_length = 45 SECONDS
 	///how long is our break after we do enough waves?
-	var/wave_downtime = 1 MINUTES
+	var/wave_downtime = 10 SECONDS
 
 	///var for a timer
 	var/wave_timer
@@ -77,6 +77,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	///the drill currently digging us
 	var/obj/machinery/drill/our_drill
+
+	var/difficultymod = 1
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
 /obj/structure/vein/Initialize()
@@ -178,6 +180,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
+	multiplier * difficultymod
 	var/list/adjacent_turfs = get_adjacent_open_turfs(current)
 	var/drop_location = src.loc //Backup in case we can't find an adjacent turf
 	if(adjacent_turfs.len)
@@ -213,7 +216,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 2
+	max_mobs = 6
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
@@ -242,7 +245,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 3 //Best not to go past 6 due to balance and lag reasons
+	max_mobs = 10 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 8 SECONDS
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -293,7 +296,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/ice/classtwo
 	mining_charges = 8
-	vein_class = 2
+	vein_class = 20
 	ore_list = list(
 		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/gold = 10,
@@ -316,7 +319,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/ice/classthree
 	mining_charges = 10
-	vein_class = 3
+	vein_class = 30
 	ore_list = list(
 		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/gold = 5,
@@ -350,7 +353,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		/obj/item/stack/ore/ice = 8,
 		)
-	max_mobs = 6
+	max_mobs = 40
 	spawn_time = 8 SECONDS
 //Jungle
 
@@ -394,7 +397,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 4,
 		)
-	max_mobs = 2
+	max_mobs = 6
 	spawn_time = 15 SECONDS
 
 /obj/structure/vein/jungle/classtwo/rare
@@ -407,7 +410,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/jungle/classthree
 	mining_charges = 10
-	vein_class = 3
+	vein_class = 30
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 20,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1,
@@ -424,7 +427,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 4,
 		)
 	//jungle mobs are kind of fucking hard, less max
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/jungle/classthree/rare
@@ -493,7 +496,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 6,
 		)
 
-	max_mobs = 6
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/sand/classthree/rare
@@ -541,7 +544,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/rockplanet/classthree
@@ -564,7 +567,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/rockplanet/classfour
@@ -629,12 +632,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/diamond = 2,
 		)
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/moon/classthree
 	mining_charges = 10
-	vein_class = 3
+	vein_class = 30
 
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath = 10,
@@ -691,7 +694,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 7,
 		/obj/item/stack/ore/titanium = 5,
 		)
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/desert/classthree
@@ -712,7 +715,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 7,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 
@@ -738,7 +741,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 5 SECONDS
 	///His greed was his downfall
 	var/greed_chance = 20
@@ -746,7 +749,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/shrouded/Initialize()
 	. = ..()
 	if(prob(greed_chance))
-		max_mobs = 15
+		max_mobs = 10
 
 /obj/structure/vein/shrouded/classtwo
 	mining_charges = 10
@@ -839,7 +842,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/asteroid/classtwo/rare
@@ -871,7 +874,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/asteroid/classthree/rare
@@ -924,7 +927,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/waterplanet/classthree
@@ -949,6 +952,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 

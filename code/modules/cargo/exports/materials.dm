@@ -43,7 +43,7 @@
 // Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
 /datum/export/material/diamond
-	cost = 125
+	cost = 100
 	unit_name = "cm3 of diamond"
 	///my gay ass does not need industrial quantities of diamonds extracted with the blood of hungry kepori.
 	elasticity_coeff = 0.004
@@ -56,32 +56,32 @@
 	material_id = /datum/material/plasma
 
 /datum/export/material/uranium
-	cost = 25
+	cost = 20
 	unit_name = "cm3 of uranium"
 	sell_floor = 20
 	material_id = /datum/material/uranium
 
 /datum/export/material/gold
-	cost = 30
+	cost = 20
 	unit_name = "cm3 of gold"
 	sell_floor = 10
 	material_id = /datum/material/gold
 
 /datum/export/material/silver
-	cost = 15
+	cost = 10
 	unit_name = "cm3 of silver"
 	sell_floor = 10
 	material_id = /datum/material/silver
 
 /datum/export/material/titanium
-	cost = 30
+	cost = 20
 	unit_name = "cm3 of titanium"
 	sell_floor = 15
 	material_id = /datum/material/titanium
 
 /datum/export/material/bscrystal
 	unit_name = "bluespace crystals"
-	cost = 75
+	cost = 50
 	sell_floor = 50
 	material_id = /datum/material/bluespace
 

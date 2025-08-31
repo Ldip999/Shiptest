@@ -13,6 +13,7 @@
 	var/num_wanted = 1
 	var/allow_subtypes = FALSE
 	var/count_stacks = TRUE
+	var/list/target_planets
 
 /datum/mission/outpost/survey/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
@@ -63,6 +64,7 @@
 	var/danger_bonus = 50
 	var/garden_string = "lush gardens"
 	var/planet_hint ="Beach and Jungle"
+	target_planets = list(/datum/planet_type/jungle, /datum/planet_type/beach)
 
 /datum/mission/outpost/survey/garden/New(...)
 	if(!name)
@@ -83,6 +85,7 @@
 	danger_bonus = 100
 	garden_string = "sickly gardens"
 	planet_hint = "Waste"
+	target_planets = list(/datum/planet_type/waste)
 
 /datum/mission/outpost/survey/garden/ice
 	value = 2000
@@ -92,6 +95,7 @@
 	danger_bonus = 75
 	garden_string = "chilly gardens"
 	planet_hint = "Ice"
+	target_planets = list(/datum/planet_type/ice)
 
 /datum/mission/outpost/survey/garden/arid
 	value = 2000
@@ -101,6 +105,7 @@
 	danger_bonus = 75
 	garden_string = "rock gardens"
 	planet_hint = "Rock"
+	target_planets = list(/datum/planet_type/rock)
 
 //Survey: we like chemicals
 

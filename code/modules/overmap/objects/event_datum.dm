@@ -19,6 +19,7 @@
 	var/datum/map_generator/empty_space_mapgen
 	/// Override the mountain value of the mapgen to this value.
 	var/mountain_height_override
+	var/basetype
 
 /datum/overmap/event/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan,...)
 	. = ..()
@@ -85,7 +86,6 @@
 	spread_chance = 50
 	chain_rate = 4
 	interference_power = 15
-
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
 
 	var/safe_speed = 3
@@ -99,6 +99,8 @@
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/iron,
 		)
+
+	basetype = /datum/overmap/event/meteor
 
 /datum/overmap/event/meteor/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -172,6 +174,9 @@
 	chance_to_affect = 30
 	interference_power = 100
 	var/strength = 4
+	basetype = /datum/overmap/event/emp
+
+
 
 /datum/overmap/event/emp/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -238,6 +243,8 @@
 	chance_to_affect = 20
 	interference_power = 20
 	var/strength = 4
+	
+	basetype = /datum/overmap/event/flare
 
 /datum/overmap/event/flare/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -306,6 +313,8 @@
 	var/zap_flag = ZAP_STORM_FLAGS
 	var/max_damage = 3000
 	var/min_damage = 1000
+	
+	basetype = /datum/overmap/event/electric
 
 /datum/overmap/event/electric/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -360,6 +369,8 @@
 
 	//list of ships we are currently affecting so we can stop flicking the lights when they leave
 	var/list/affected_ships = list()
+	
+	basetype = /datum/overmap/event/nebula
 
 /datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
@@ -419,6 +430,8 @@
 	interference_power = 40
 	///The currently linked wormhole
 	var/datum/overmap/event/wormhole/other_wormhole
+	
+	basetype = /datum/overmap/event/wormhole
 
 /datum/overmap/event/wormhole/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan, _other_wormhole, ...)
 	. = ..()
@@ -461,6 +474,8 @@
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
 	)
 	primary_ores = null
+	
+	basetype = /datum/overmap/event/meteor/carp
 
 /datum/overmap/event/meteor/carp/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -507,6 +522,8 @@
 		/obj/effect/meteor/dust=3,
 	)
 	primary_ores = null
+	
+	basetype = /datum/overmap/event/meteor/dust
 
 /datum/overmap/event/meteor/dust/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -523,6 +540,8 @@
 	chance_to_affect = 10
 	spread_chance = 35
 	chain_rate = 6
+	
+	basetype = /datum/overmap/event/anomaly
 
 /datum/overmap/event/anomaly/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan, ...)
 	. = ..()
@@ -571,6 +590,8 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	chance_to_affect = 60
 	interference_power = 40
 	var/strength = 20
+	
+	basetype = /datum/overmap/event/rad
 
 /datum/overmap/event/rad/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -623,6 +644,9 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	var/blocks_sight = TRUE
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
+
+	
+	basetype = /datum/overmap/event/meteor/debris
 
 /datum/overmap/event/meteor/debris/alter_token_appearance()
 	. = ..()
