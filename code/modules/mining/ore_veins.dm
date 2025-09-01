@@ -180,7 +180,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
-	multiplier * difficultymod
+	multiplier =* difficultymod
 	var/list/adjacent_turfs = get_adjacent_open_turfs(current)
 	var/drop_location = src.loc //Backup in case we can't find an adjacent turf
 	if(adjacent_turfs.len)
