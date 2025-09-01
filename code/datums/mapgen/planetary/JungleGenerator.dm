@@ -2,7 +2,7 @@
 	perlin_zoom = 65
 	mountain_height = 0.60
 
-	primary_area_type = /area/overmap_encounter/planetoid/jungle_infested
+	primary_area_type = /area/overmap_encounter/planetoid/jungle
 
 	biome_table = list(
 		BIOME_COLDEST = list(
@@ -105,11 +105,11 @@
 
 	feature_spawn_chance = 1.4
 	feature_spawn_list = list(
-		/obj/structure/vein/jungle_infested = 2,
-		/obj/structure/vein/jungle_infested/classtwo = 4,
-		/obj/structure/vein/jungle_infested/classtwo/rare = 2,
-		/obj/structure/vein/jungle_infested/classthree = 2,
-		/obj/structure/vein/jungle_infested/classthree/rare = 1,
+		/obj/structure/vein/jungle = 2,
+		/obj/structure/vein/jungle/classtwo = 4,
+		/obj/structure/vein/jungle/classtwo/rare = 2,
+		/obj/structure/vein/jungle/classthree = 2,
+		/obj/structure/vein/jungle/classthree/rare = 1,
 		/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle = 20,
 		/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle = 50,
 	)
@@ -163,9 +163,9 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/wasteland = 1)
 	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
-		/obj/structure/vein/jungle_infested = 4,
-		/obj/structure/vein/jungle_infested/classtwo = 6,
-		/obj/structure/vein/jungle_infested/classthree = 2,
+		/obj/structure/vein/jungle = 4,
+		/obj/structure/vein/jungle/classtwo = 6,
+		/obj/structure/vein/jungle/classthree = 2,
 	)
 
 /datum/biome/jungle/water
@@ -202,8 +202,8 @@
 		/obj/item/pickaxe/rusted = 1,
 		/obj/structure/spawner/burrow/jungle_planet = 4,
 		/obj/effect/spawner/random/anomaly/jungle = 2,
-		/obj/structure/vein/jungle_infested = 8,
-		/obj/structure/vein/jungle_infested/classtwo = 4,
+		/obj/structure/vein/jungle = 8,
+		/obj/structure/vein/jungle/classtwo = 4,
 	)
 
 /datum/biome/cave/jungle/dirt

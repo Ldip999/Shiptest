@@ -106,11 +106,11 @@
 
 	feature_spawn_chance = 1.4
 	feature_spawn_list = list(
-		/obj/structure/vein/jungle = 2,
-		/obj/structure/vein/jungle/classtwo = 2,
-		/obj/structure/vein/jungle/classtwo/rare = 4,
-		/obj/structure/vein/jungle/classthree = 2,
-		/obj/structure/vein/jungle/classthree/rare = 6,
+		/obj/structure/vein/jungle_infested = 2,
+		/obj/structure/vein/jungle_infested/classtwo = 2,
+		/obj/structure/vein/jungle_infested/classtwo/rare = 4,
+		/obj/structure/vein/jungle_infested/classthree = 2,
+		/obj/structure/vein/jungle_infested/classthree/rare = 6,
 		/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle = 20,
 		/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle = 50,
 	)
@@ -171,8 +171,8 @@
 		/obj/structure/alien/egg/grown = 10,
 		/obj/item/pickaxe/rusted = 1,
 		/obj/effect/spawner/random/anomaly/jungle = 2,
-		/obj/structure/vein/jungle = 8,
-		/obj/structure/vein/jungle/classtwo = 4,
+		/obj/structure/vein/jungle_infested = 8,
+		/obj/structure/vein/jungle_infested/classtwo = 4,
 	)
 
 
