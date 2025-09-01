@@ -640,16 +640,13 @@
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/shoes/sneakers/brown,
-/obj/item/clothing/suit/jacket/leather/duster/command,
 /obj/item/clothing/glasses/cheapsuns,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/storage/box/ammo/a12g_buckshot,
 /obj/structure/cable/pink{
 	icon_state = "4-10"
 	},
-/obj/item/gun/ballistic/shotgun/doublebarrel/presawn/empty,
 /obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
