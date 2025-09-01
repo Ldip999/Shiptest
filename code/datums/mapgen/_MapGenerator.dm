@@ -4,6 +4,8 @@
 
 /// Gets the overmap object this is tied to and do checks before generating
 /datum/map_generator/proc/pre_generation(datum/overmap/our_planet)
+	var/datum/overmap/dynamic/actual_our_planet = our_planet
+	difficulty = actual_our_planet.difficulty
 	return
 
 /// Goes through the planet's turfs again, for touchups or more importantly, greebles.

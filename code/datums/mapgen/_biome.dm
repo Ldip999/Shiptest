@@ -65,7 +65,7 @@
 /// The features and creatures compare against and add to the lists passed to determine
 /// if they can spawn at the tested turf. This method of checking reduces the amount of
 /// time spent populating a planet.
-/datum/biome/proc/populate_turf(turf/gen_turf, list/feature_list, list/mob_list)
+/datum/biome/proc/populate_turf(turf/gen_turf, list/feature_list, list/mob_list, difficultymod)
 
 	if(isclosedturf(gen_turf))
 		return
@@ -98,12 +98,15 @@
 
 		if(can_spawn)
 			spawned_feature = new feature_type(open_turf)
+			if(istype(spawned_feature, /obj/structure/vein))
+				var/obj/structure/vein/v = spawned_feature
+				v.difficultymod = difficultymod
 			// insert at the head of the list, so the most recent features get checked first
 			feature_list.Insert(1, spawned_feature)
 			open_turf.flags_1 |= NO_LAVA_GEN_1
 
 	//MOB SPAWNING HERE
-	if(length(mob_spawn_list_expanded) && !spawned_flora && !spawned_feature && prob(mob_spawn_chance) && (a_flags & MOB_SPAWN_ALLOWED))
+	if(length(mob_spawn_list_expanded) && !spawned_flora && !spawned_feature && prob(mob_spawn_chance*difficultymod) && (a_flags & MOB_SPAWN_ALLOWED))
 		var/atom/picked_mob = pick(mob_spawn_list_expanded)
 
 		var/can_spawn = TRUE

@@ -943,3 +943,22 @@
 /turf/closed/mineral/random/moon/lit
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
 	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+
+
+/turf/closed/mineral/random/jungle_infested
+	name = "bauxite"
+	desc = "Silt and mud are mummified, taking a rigid shape in the morning sun."
+	icon = 'icons/turf/walls/jungle_wall.dmi'
+	smooth_icon = 'icons/turf/walls/jungle_wall.dmi'
+	icon_state = "jungle_wall-0"
+	base_icon_state = "jungle_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	turf_type = /turf/open/floor/plating/dirt/jungle
+	baseturfs = /turf/open/floor/plating/dirt/jungle
+
+	mineralChance = 50
+
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 2, /obj/item/stack/ore/diamond = 10, /obj/item/stack/ore/gold = 30,
+		/obj/item/stack/ore/silver = 20, /obj/item/stack/ore/iron = 20, /obj/item/stack/ore/titanium = 4
+		)

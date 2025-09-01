@@ -124,7 +124,7 @@
 	if(planet_name)
 		for(var/mob/Mob as anything in GLOB.player_list)
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
-				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
+				Mob.play_screen_text("[dock_requester.name]<br>[current_overmap.name]<br>[Mob.real_name]<br><span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
 				playsound(Mob, landing_sound, 50)
 
 
@@ -607,3 +607,13 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_DARK_MODERATE_ORANGE
+
+
+/area/overmap_encounter/planetoid/jungle_infested
+	name = "\improper Jungle Infested Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambience_index = AMBIENCE_AWAY
+	light_range = 0.5
+	light_power = 0.25
+	light_color = COLOR_DARK_PURPLE
+

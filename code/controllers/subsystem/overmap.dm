@@ -284,7 +284,7 @@ SUBSYSTEM_DEF(overmap)
 	var/starname
 	///Type of the star
 	var/datum/overmap/star/startype
-	
+
 	var/sector_type = YELLOW_STAR
 
 	///Defines which generator to use for the overmap
@@ -1219,17 +1219,18 @@ SUBSYSTEM_DEF(overmap)
 		DYNAMIC_WORLD_ROCKPLANET = 5,
 		DYNAMIC_WORLD_ICE = 20,
 		DYNAMIC_WORLD_MOON = 20,
-		DYNAMIC_WORLD_ASTEROID = 20
+		DYNAMIC_WORLD_ASTEROID = 20,
+		DYNAMIC_WORLD_SPACERUIN = 20
 	)
 	mission_catalogue = list(\
 		/datum/mission/outpost/survey/garden/waste = 10,
 		/datum/mission/outpost/survey/garden/ice = 10,
 		/datum/mission/outpost/survey/garden/arid = 10,
-		/datum/mission/outpost/drill = 20,
-		/datum/mission/outpost/drill/classtwo = 100,
+		/datum/mission/outpost/drill = 10,
+		/datum/mission/outpost/drill/classtwo = 30,
 		/datum/mission/outpost/drill/classthree = 10
 	)
-	rewardmult = 0.75
+	rewardmult = 1
 
 /datum/overmap_star_system/redstar
 	has_outpost = TRUE
@@ -1238,9 +1239,10 @@ SUBSYSTEM_DEF(overmap)
 	sector_type = RED_STAR
 	dynamic_probabilities = list(
 		DYNAMIC_WORLD_WASTEPLANET = 50,
-		DYNAMIC_WORLD_DESERT = 20,
 		DYNAMIC_WORLD_LAVA = 50,
 		DYNAMIC_WORLD_ICE = 50,
+		DYNAMIC_WORLD_JUNGLE_INFESTED = 50,
+		DYNAMIC_WORLD_SPACERUIN = 40
 	)
 	mission_catalogue = list(\
 		/datum/mission/outpost/drill = 5,

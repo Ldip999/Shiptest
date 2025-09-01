@@ -424,3 +424,21 @@
 /datum/map_generator/single_turf/waterball
 	turf_type = /turf/open/water/stormy_planet_lit
 	area_type = /area/overmap_encounter/planetoid/waterball
+
+
+/datum/planet_type/jungle_infested
+	name = "infested jungle planetoid"
+	desc = "A planet with a vibrant ecosystem... maybe a bit too vibrant... suprisingly uninhabitable, even with a machette."
+	planet = DYNAMIC_WORLD_JUNGLE_INFESTED
+	icon_state = "jungle"
+	color = COLOR_PURPLE
+	mapgen = /datum/map_generator/planet_generator/jungle_infested
+	default_baseturf = /turf/open/floor/plating/dirt/jungle
+	gravity = STANDARD_GRAVITY
+	weather_controller_type = /datum/weather_controller/lush
+	ruin_type = RUINTYPE_JUNGLE
+	primary_ores = list(\
+		/obj/item/stack/ore/gold,
+		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
+		)
+	vein = /obj/structure/vein/jungle_infested

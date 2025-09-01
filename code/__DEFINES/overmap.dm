@@ -50,6 +50,8 @@
 
 #define DYNAMIC_WORLD_TEST "test"
 
+#define DYNAMIC_WORLD_JUNGLE_INFESTED "jungle_infested"
+
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
 #define OVERMAP_SHIP_FLYING "flying"

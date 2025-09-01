@@ -54,8 +54,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/currently_spawning = FALSE
 
 	///how far away can we create mob_spawners?
-	var/spawn_distance_min = 4
-	var/spawn_distance_max = 6
+	var/spawn_distance_min = 6
+	var/spawn_distance_max = 8
 
 
 	///a list of currently active spawners created by the vein. Used to keep us from going insane when we turn them on / off
@@ -148,7 +148,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		var/obj/effect/drill_spawner/bug_breach = new /obj/effect/drill_spawner(spawning_tile)
 		active_spawners += bug_breach
 		bug_breach.our_vein = src
-		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawner_distance_min, spawner_distance_max)
+		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, floor(max_mobs * difficultymod), spawn_sound, spawner_distance_min, spawner_distance_max)
 		bug_breach.start_death_timer(wave_length - 5 SECONDS)
 
 /obj/structure/vein/proc/pick_tile(list/peel)
@@ -955,3 +955,95 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 10
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/jungle_infested
+
+	mining_charges = 20
+	// class 1 has easy mobs, the ones you find on the surface
+	mob_types = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife = 10,
+		/mob/living/simple_animal/hostile/alien = 5,
+		/mob/living/simple_animal/hostile/alien/sentinel = 5,
+		/mob/living/simple_animal/hostile/alien/queen = 1,
+		/mob/living/simple_animal/hostile/alien/drone = 5,
+
+	)
+
+	//same surface ore drop rate too...
+	ore_list = list(
+		/obj/item/stack/ore/iron = 50,
+		/obj/item/stack/ore/gold = 30,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/titanium = 1,
+		)
+
+/obj/structure/vein/jungle_infested/classtwo
+	mining_charges = 50
+	vein_class = 2
+	//We then start to introduce the unused jungle mobs... slowly. <-- nah we live we die we wipe
+	mob_types = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife = 10,
+		/mob/living/simple_animal/hostile/alien = 50,
+		/mob/living/simple_animal/hostile/alien/sentinel = 50,
+		/mob/living/simple_animal/hostile/alien/queen = 10,
+		/mob/living/simple_animal/hostile/alien/drone = 50,
+		/mob/living/simple_animal/hostile/jungle/seedling = 30,
+		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 40,
+	)
+	ore_list = list(
+		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/gold = 20,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/titanium = 4,
+		)
+	max_mobs = 6
+	spawn_time = 15 SECONDS
+
+/obj/structure/vein/jungle_infested/classtwo/rare
+	mining_charges = 80
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 5,
+		)
+
+/obj/structure/vein/jungle_infested/classthree
+	mining_charges = 80
+	vein_class = 3
+	//This really bints your bogos and deactivates your iguana
+	mob_types = list(
+		/mob/living/simple_animal/hostile/alien = 100,
+		/mob/living/simple_animal/hostile/alien/sentinel = 100,
+		/mob/living/simple_animal/hostile/alien/queen = 100,
+		/mob/living/simple_animal/hostile/alien/drone = 100,
+		/mob/living/simple_animal/hostile/jungle/seedling = 30,
+		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 40,
+	)
+	ore_list = list(
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/titanium = 4,
+		)
+	//jungle mobs are kind of fucking hard, less max
+	max_mobs = 10
+	spawn_time = 10 SECONDS
+
+/obj/structure/vein/jungle_infested/classthree/rare
+	mining_charges = 100
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 10,
+		)

@@ -58,4 +58,4 @@
 	if(!(A.area_flags & CAVES_ALLOWED))
 		return
 
-	biome.populate_turf(gen_turf, created_features, created_mobs)
+	biome.populate_turf(gen_turf, created_features, created_mobs, difficulty)
