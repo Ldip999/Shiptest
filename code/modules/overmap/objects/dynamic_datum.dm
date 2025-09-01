@@ -73,7 +73,7 @@
 	. = ..()
 	SSovermap.dynamic_encounters += src
 	current_overmap.dynamic_encounters += src
-	difficulty = rand(system_spawned_in.rewardmult* 0.5, system_spawned_in.rewardmult*1.5)
+	difficulty = system_spawned_in.rewardmult
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
 	if(load_now)
