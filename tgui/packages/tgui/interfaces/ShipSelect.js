@@ -42,12 +42,15 @@ export const ShipSelect = (props, context) => {
 
   const [shownTabs, setShownTabs] = useLocalState(context, 'tabs', [
     { name: 'Ship Select', tab: 1 },
-    { name: 'Ship Purchase', tab: 3 },
+    { name: 'Ship Purchase', tab: 4 },
   ]);
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
 
   const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+
+
+  const [selectedRole, setSelectedRole] = useLocalState(context, 'selectedRole', null);
 
   return (
     <Window title="Ship Select" width={800} height={600} resizable>
@@ -82,7 +85,7 @@ export const ShipSelect = (props, context) => {
                   }
                   disabled={data.purchaseBanned}
                   onClick={() => {
-                    setCurrentTab(3);
+                    setCurrentTab(4);
                   }}
                 />
                 <Button
@@ -229,7 +232,7 @@ export const ShipSelect = (props, context) => {
             </Section>
           </>
         )}
-        {currentTab === 3 && (
+        {currentTab === 4 && (
           <Section
             title="Ship Purchase"
             buttons={
