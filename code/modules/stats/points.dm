@@ -22,6 +22,9 @@ GLOBAL_LIST_EMPTY(ckey_points_kvp)
 	pointsToAdd += xp / 200
 	EvalPoints()
 
+/datum/points/proc/addExport(payout)
+	pointsToAdd += payout / 400
+
 /datum/points/proc/EvalPoints()
 	if(pointsToAdd >= 1)
 		pointcount += pointsToAdd
