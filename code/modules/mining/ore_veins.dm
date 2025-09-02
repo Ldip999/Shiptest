@@ -29,12 +29,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Contents won't be randomized if the list isn't empty on initialize
 	var/list/vein_contents = list()
 	//Allows subtyped veins to determine how long it takes to mine one mining charge
-	var/mine_time_multiplier = 3
+	var/mine_time_multiplier = 2
 	//Allows subtyped veins to determine how much loot is dropped per drop_ore call
-	var/drop_rate_amount_min = 25
-	var/drop_rate_amount_max = 100
+	var/drop_rate_amount_min = 1
+	var/drop_rate_amount_max = 50
 	///variables for the mob spawners we generate
-	var/max_mobs = 3
+	var/max_mobs = 5
 	var/spawn_time = 8 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -138,7 +138,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	COOLDOWN_START(src, wave_timer, wave_length)
 	if(!increment_wave_tally())
 		return FALSE
-	var/breaches_to_spawn = clamp(vein_class, 1, vein_class - length(active_spawners))
+	var/breaches_to_spawn = clamp((vein_class * difficultymod), 2, (vein_class * difficultymod) - length(active_spawners))
 	for(var/mob_index in 1 to breaches_to_spawn)
 		if(length(active_spawners) >= vein_class)
 			return
@@ -180,7 +180,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
-	multiplier =* difficultymod
+	multiplier *= difficultymod
 	var/list/adjacent_turfs = get_adjacent_open_turfs(current)
 	var/drop_location = src.loc //Backup in case we can't find an adjacent turf
 	if(adjacent_turfs.len)
