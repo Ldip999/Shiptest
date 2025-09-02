@@ -2,7 +2,7 @@
 	set name = "Field Tending Supplies"
 	set category = "IC"
 	set desc = "Retrive your scavanged field tending supplies"
-	if(HAS_TRAIT(src,TRAIT_VETDOC))
+	if(HAS_TRAIT(src,TRAIT_VETDOC) || HAS_TRAIT(src, TRAIT_FIELDMEDIC))
 		if(isliving(src) && stat == CONSCIOUS)
 			var/mob/living/curruser = src
 			var/charges = floor(curruser.heal_reservoir)
