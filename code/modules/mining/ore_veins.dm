@@ -148,7 +148,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		var/obj/effect/drill_spawner/bug_breach = new /obj/effect/drill_spawner(spawning_tile)
 		active_spawners += bug_breach
 		bug_breach.our_vein = src
-		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, floor(max_mobs * difficultymod), spawn_sound, spawner_distance_min, spawner_distance_max)
+		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, ceil(max_mobs * difficultymod) + 1, spawn_sound, spawner_distance_min, spawner_distance_max)
 		bug_breach.start_death_timer(wave_length - 5 SECONDS)
 
 /obj/structure/vein/proc/pick_tile(list/peel)
