@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
  * Sandbags
  */
 
-/obj/item/stack/sheet/mineral/sandbags
+/*/obj/item/stack/sheet/mineral/sandbags
 	name = "sandbags"
 	icon_state = "sandbags"
 	singular_name = "sandbag"
@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 		G.use(1)
 	else
 		return ..()
-
+*/
 /*
  * Diamond
  */
