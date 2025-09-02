@@ -348,6 +348,7 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(CONFIG_GET(flag/roundstart_traits))
 			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
+		humanc.shippee = ship
 		
 		if(anomalyloadout)
 			if(istext(anomalyloadout))

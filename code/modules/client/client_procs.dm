@@ -274,7 +274,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	fps = prefs.clientfps == 0 ? 60 : prefs.clientfps //WS Edit - Client FPS Tweak
-
+	var/datum/points/clientpoints = GLOB.ckey_points_kvp[ckey]
+	if(!clientpoints)
+		clientpoints= new /datum/points
+		clientpoints.pointcount = prefs.points
+		GLOB.ckey_points_kvp[ckey] = clientpoints
+	clientpoints.parent = src
 	donator = GLOB.donators[ckey] || new /datum/donator(src)
 
 	if(fexists(roundend_report_file()))

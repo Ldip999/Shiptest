@@ -142,6 +142,7 @@
 		if(give_exp)
 			if (mineralType && (mineralAmt > 0))
 				H.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
+				H.statsofmob.addMiningXP(initial(mineralType.mine_experience) * mineralAmt)
 			else
 				H.mind.adjust_experience(/datum/skill/mining, 4)
 

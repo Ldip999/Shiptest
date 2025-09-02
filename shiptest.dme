@@ -3563,6 +3563,8 @@
 #include "code\modules\station_goals\dna_vault.dm"
 #include "code\modules\station_goals\shield.dm"
 #include "code\modules\station_goals\station_goal.dm"
+#include "code\modules\stats\points.dm"
+#include "code\modules\stats\stats.dm"
 #include "code\modules\surgery\amputation.dm"
 #include "code\modules\surgery\blood_filter.dm"
 #include "code\modules\surgery\bone_fractures.dm"
