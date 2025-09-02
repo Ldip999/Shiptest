@@ -423,6 +423,11 @@
 	box = /obj/item/storage/box/survival/engineer
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
+/datum/outfit/job/independent/engineer/anomaly
+	shoes = null
+	box = /obj/item/storage/box/survival
+	backpack_contents = list()
+
 /datum/outfit/job/independent/engineer/salvage
 	name = "Independent - Engineer (Salvager)"
 
@@ -673,6 +678,12 @@
 	box = /obj/item/storage/box/survival/mining
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
+
+/datum/outfit/job/independent/miner/anomaly
+	backpack_contents = list()
+	l_pocket = null
+	shoes = null
+	box = /obj/item/storage/box/survival
 
 /datum/outfit/job/independent/miner/hazard
 	name = "Independent - Miner (Hazard Uniform)"

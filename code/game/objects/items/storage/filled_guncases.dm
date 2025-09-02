@@ -3,25 +3,46 @@
 /* Hunter's Pride */
 
 /obj/item/storage/guncase/pistol/firebrand
+	name = "HP Firebrand"
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	gun_type = /obj/item/gun/ballistic/revolver/firebrand
+
+/obj/item/storage/guncase/pistol/firebrand/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
 
 /obj/item/storage/guncase/pistol/derringer
 	gun_type = /obj/item/gun/ballistic/derringer
+
+/obj/item/storage/guncase/pistol/derringer/wammo
+	ammo_box = /obj/item/storage/box/ammo/c38
 
 /obj/item/storage/guncase/pistol/montagne
 	gun_type = /obj/item/gun/ballistic/revolver/montagne
 	mag_type = /obj/item/ammo_box/a44roum_speedloader
 
 /obj/item/storage/guncase/pistol/candor
+	name = "Candor"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
 	mag_type = /obj/item/ammo_box/magazine/m45
 
+/obj/item/storage/guncase/pistol/candor/wammo
+	ammo_box = /obj/item/storage/box/ammo/c45
+
 /obj/item/storage/guncase/pistol/detective
+	name = "HP Detective Special"
+	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	gun_type = /obj/item/gun/ballistic/revolver/detective
 	mag_type = /obj/item/ammo_box/c38
 
+/obj/item/storage/guncase/pistol/detective/wammo
+	ammo_box = /obj/item/storage/box/ammo/c38
+
 /obj/item/storage/guncase/pistol/shadow
 	gun_type = /obj/item/gun/ballistic/revolver/shadow
+
+/obj/item/storage/guncase/pistol/shadow/wammo
+	ammo_box = /obj/item/storage/box/ammo/a44roum
 
 /obj/item/storage/guncase/pistol/ashhand
 	gun_type = /obj/item/gun/ballistic/revolver/ashhand
@@ -29,18 +50,34 @@
 /obj/item/storage/guncase/hellfire
 	gun_type = /obj/item/gun/ballistic/shotgun/hellfire
 
+/obj/item/storage/guncase/hellfire/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/doublebarrel
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel
 
+
+/obj/item/storage/guncase/doublebarrel/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
+
+/obj/item/storage/guncase/brimstone/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
 
 /obj/item/storage/guncase/illestren
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 
+/obj/item/storage/guncase/illestren/wammo
+	ammo_box = /obj/item/storage/box/ammo/a8_50r
+
 /obj/item/storage/guncase/beacon
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+
+/obj/item/storage/guncase/beacon/wammo
+	ammo_box = /obj/item/storage/box/ammo/a4570
 
 /obj/item/storage/guncase/scout
 	gun_type = /obj/item/gun/ballistic/rifle/scout
@@ -49,11 +86,20 @@
 /obj/item/storage/guncase/winchester
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow
 
+/obj/item/storage/guncase/winchester/wammo
+	ammo_box = /obj/item/storage/box/ammo/c38
+
 /obj/item/storage/guncase/conflagration
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 
+/obj/item/storage/guncase/conflagration/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
+
+/obj/item/storage/guncase/absolution/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
 
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
@@ -70,36 +116,81 @@
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
+	name = "R-23 \"Viper\""
+	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions during the ICW, still favored by captains and high-ranking officers of the former Syndicate. Chambered in .357 Magnum."
 	gun_type = /obj/item/gun/ballistic/revolver/viper
 	mag_type = /obj/item/ammo_box/a357/empty
 
+/obj/item/storage/guncase/pistol/a357/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
+
 /obj/item/storage/guncase/pistol/viper
+	name = "Viper-23"
+	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
 	gun_type = /obj/item/gun/ballistic/revolver/viper/indie
 	mag_type = /obj/item/ammo_box/a357/empty
 
+/obj/item/storage/guncase/pistol/viper/wammo
+	ammo_box = /obj/item/storage/box/ammo/a357
+
 /obj/item/storage/guncase/pistol/ringneck
+	name = "Ringneck-76"
+	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10x22mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/ringneck/wammo
+	ammo_box = /obj/item/storage/box/ammo/c10mm
+
 /obj/item/storage/guncase/pistol/pc76
+	name = "PC-76 \"Ringneck\""
+	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10x22mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/pc76/wammo
+	ammo_box = /obj/item/storage/box/ammo/c10mm
+
 /obj/item/storage/guncase/pistol/asp
+	name = "BC-81 \"Asp\""
+	desc = "An armor-piercing combat handgun once used by Syndicate strike teams, now primarily used by descendants of the Gorlex Marauders. Chambered in 5.7mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/asp
 	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
 
+/obj/item/storage/guncase/pistol/asp/wammo
+	ammo_box = /obj/item/storage/box/ammo/c57x39
+
 /obj/item/storage/guncase/pistol/rattlesnake
+	name = "MP-84 \"Rattlesnake\""
+	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9x18mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+
+/obj/item/storage/guncase/pistol/rattlesnake/wammo
+	ammo_box = /obj/item/storage/box/ammo/c9mm
+
+/obj/item/storage/guncase/pistol/himehabu
+	name = "PC-81 \"Himehabu\""
+	desc = "An astonishingly compact machine pistol firing ultra-light projectiles, designed to be as small and concealable as possible while remaining a credible threat at very close range. Armor penetration is practically non-existent. Chambered in .22."
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu
+
+/obj/item/storage/guncase/pistol/himehabu/wammo
+	ammo_box = /obj/item/storage/box/ammo/c22lr
 
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
 
+/obj/item/storage/guncase/cobra/wammo
+	ammo_box = /obj/item/storage/box/ammo/c45
+
 /obj/item/storage/guncase/c20r
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+
+/obj/item/storage/guncase/c20r/wammo
+	ammo_box = /obj/item/storage/box/ammo/c45
 
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
@@ -117,13 +208,22 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 
+/obj/item/storage/guncase/bulldog/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
+
 /obj/item/storage/guncase/sidewinder
 	gun_type = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	mag_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
 
+/obj/item/storage/guncase/sidewinder/wammo
+	ammo_box = /obj/item/storage/box/ammo/c57x39
+
 /obj/item/storage/guncase/hydra
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra
+
+/obj/item/storage/guncase/hydra/wammo
+	ammo_box = /obj/item/storage/box/ammo/a556_42
 
 /obj/item/storage/guncase/sbr80
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -170,21 +270,35 @@
 	mag_type = /obj/item/ammo_box/magazine/m17
 
 /obj/item/storage/guncase/pistol/m20_auto_elite
+	name = "Model 20 \"Auto Elite\""
+	desc = "A large handgun chambered .44 Roumain. Originally developed by Serene Outdoors for the Star City Police Department when their older handguns proved underpowered, the Auto Elite proved heavy and unwieldy in practice. It has nevertheless seen modest success as a sidearm for big game hunters and among customers looking to make an impression."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite
 	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
+
+/obj/item/storage/guncase/pistol/m20_auto_elite/wammo
+	ammo_box = /obj/item/storage/box/ammo/a44roum
 
 /obj/item/storage/guncase/m12
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
 	mag_type = /obj/item/ammo_box/magazine/m12_sporter
+
+/obj/item/storage/guncase/m12/wammo
+	ammo_box = /obj/item/storage/box/ammo/c22lr
 
 /obj/item/storage/guncase/m13
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter/mod
 	mag_type = /obj/item/ammo_box/magazine/m12_sporter
 	mag_count = 3
 
+/obj/item/storage/guncase/m13/wammo
+	ammo_box = /obj/item/storage/box/ammo/c22lr
+
 /obj/item/storage/guncase/m15
 	gun_type = /obj/item/gun/ballistic/automatic/m15
 	mag_type = /obj/item/ammo_box/magazine/m15
+
+/obj/item/storage/guncase/m15/wammo
+	ammo_box = /obj/item/storage/box/ammo/a556_42
 
 /obj/item/storage/guncase/woodsman
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
@@ -193,6 +307,9 @@
 
 /obj/item/storage/guncase/buckmaster
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/m11
+
+/obj/item/storage/guncase/buckmaster/wammo
+	ammo_box = /obj/item/storage/box/ammo/a12g_buckshot
 
 /* Solar Armories */
 
@@ -219,8 +336,13 @@
 /* VI */
 
 /obj/item/storage/guncase/pistol/commander
+	name = "VI Commander"
+	desc = "A service pistol produced as Vigilitas Interstellar's standard sidearm. Has a reputation for being easy to use, due to its light recoil and high magazine capacity. Chambered in 9x18mm."
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander
 	mag_type = /obj/item/ammo_box/magazine/co9mm
+
+/obj/item/storage/guncase/pistol/commander/wammo
+	ammo_box = /obj/item/storage/box/ammo/c9mm
 
 /obj/item/storage/guncase/vector
 	gun_type = /obj/item/gun/ballistic/automatic/smg/vector
@@ -262,6 +384,9 @@
 /obj/item/storage/guncase/wt550
 	gun_type = /obj/item/gun/ballistic/automatic/smg/wt550
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
+
+/obj/item/storage/guncase/wt550/wammo
+	ammo_box = /obj/item/storage/box/ammo/c46x30mm
 
 /obj/item/storage/guncase/gauss
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss
@@ -365,6 +490,9 @@
 /obj/item/storage/guncase/skm
 	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+
+/obj/item/storage/guncase/skm/wammo
+	ammo_box = /obj/item/storage/box/ammo/a762_40
 
 /obj/item/storage/guncase/skm_lmg
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
