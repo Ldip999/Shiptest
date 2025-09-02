@@ -296,7 +296,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/ice/classtwo
 	mining_charges = 8
-	vein_class = 20
+	vein_class = 2
 	ore_list = list(
 		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/gold = 10,
@@ -319,7 +319,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/ice/classthree
 	mining_charges = 10
-	vein_class = 30
+	vein_class = 3
 	ore_list = list(
 		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/gold = 5,
@@ -410,7 +410,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/jungle/classthree
 	mining_charges = 10
-	vein_class = 30
+	vein_class = 3
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 20,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1,
@@ -637,7 +637,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/moon/classthree
 	mining_charges = 10
-	vein_class = 30
+	vein_class = 3
 
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath = 10,
