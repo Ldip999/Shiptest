@@ -542,6 +542,7 @@
 	STR.set_holdable(list(/obj/item/ammo_casing/spent/,/obj/item/ammo_casing))
 	STR.max_w_class = WEIGHT_CLASS_TINY
 	STR.max_items = 500
+	STR.max_combined_w_class = 500
 	
 /obj/item/storage/bag/bullet/equipped(mob/user)
 	. = ..()
