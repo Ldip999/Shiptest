@@ -901,6 +901,14 @@
 	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/c762_54R
+	name = "Ammo packet (7.62x54R)"
+	id = "c762_54R"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 30000)
+	build_path = /obj/item/storage/box/ammo/c762_54R
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/c556mmHITP_surplus
 	name = "Ammo Box (surplus 5.56mm HITP caseless)"
 	id = "c556mmHITP-surplus"

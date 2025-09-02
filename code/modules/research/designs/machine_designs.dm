@@ -676,3 +676,12 @@
 	build_path = /obj/item/circuitboard/machine/shuttle/smes
 	category = list ("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/biogen_rations
+	name = "Machine Design (Ration Assembler Board)"
+	desc = "The circuit board for a Ration Assembler."
+	id = "biogen_rations"
+	build_path = /obj/item/circuitboard/machine/biogenerator/rations
+	build_type = AUTOLATHE | IMPRINTER
+	category = list ("Hydroponics Machinery", "initial", "Machinery")
+	departmental_flags = ALL

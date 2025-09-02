@@ -795,3 +795,10 @@
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/mosin
+	name = "M1891 Three Liner Rifles Crate"
+	desc = "Contains 3 mosins for you and your comrades. Ushankas and comrades sold seperately."
+	cost = 1000
+	contains = list(/obj/item/gun/ballistic/rifle/mosin , /obj/item/gun/ballistic/rifle/mosin , /obj/item/gun/ballistic/rifle/mosin)
+	crate_name = "sniper rifle crate"

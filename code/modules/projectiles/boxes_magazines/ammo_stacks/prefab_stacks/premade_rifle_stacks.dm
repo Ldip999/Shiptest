@@ -222,3 +222,22 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c299 = 4)
 	generate_items_inside(items_inside,src)
+
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c762_54R
+	ammo_type = /obj/item/ammo_casing/c762_54R
+	max_ammo = 5
+
+/obj/item/storage/box/ammo/c762_54R
+	name = "packet of 7.62x54 rimmed ammo"
+	desc = "A packet of 7.62x54 rimmed bullets, for use with the M1891 Three liner 'Mosin'."
+	icon_state = "c762x54R"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/box/ammo/c762_54R/PopulateContents()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/static/list/can_hold = typecacheof(list(/obj/item/ammo_box/magazine/ammo_stack/prefilled/c762_54R))
+	STR.can_hold = can_hold
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c762_54R = 4)
+	generate_items_inside(items_inside,src)

@@ -448,3 +448,9 @@
 	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
 	cost = 360
+
+/datum/supply_pack/ammo/c762_54R
+	name = "7.62x54 rimmed Ammo Box Crate"
+	desc = "A 20 7.62x54 rimmed bullets, for use with the M1891 Three liner 'Mosin'."
+	contains = list(/obj/item/storage/box/ammo/c762_54R)
+	cost = 100

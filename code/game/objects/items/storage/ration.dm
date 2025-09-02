@@ -379,7 +379,7 @@
 
 /obj/item/storage/ration/crayons
 	name = "military grade crayon ration"
-	desc = "Proven to increase kill count by atleast 1."
+	desc = "Proven to increase kill count by atleast 1. Makes you want to full wipe in Big Red caves."
 	emblem_icon_state = "emblem_crayons"
 /obj/item/storage/ration/crayons/PopulateContents()
 	var/static/items_inside = list(
