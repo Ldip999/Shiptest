@@ -654,6 +654,10 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/cowboy/sec
 
+/datum/outfit/job/independent/quartermaster/anomaly
+	shoes = null
+	glasses = null
+
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
 	jobtype = /datum/job/mining
