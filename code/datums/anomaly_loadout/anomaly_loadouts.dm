@@ -784,6 +784,14 @@
 /datum/anomalyloadout/independent/engineer
 	engineeringcostmult = 0.5
 
+/datum/anomalyloadout/independent/qm
+	utilitycostmult = 0.5
+
+
+/datum/anomalyloadout/independent/qm/New()
+	. = ..()
+	loadoutpoints += 1000
+
 /datum/anomalyloadout/syndicate
 
 
