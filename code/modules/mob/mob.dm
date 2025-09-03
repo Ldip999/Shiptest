@@ -89,6 +89,7 @@
 	update_config_movespeed()
 	update_movespeed(TRUE)
 	become_hearing_sensitive(ORGAN_TRAIT)
+	statsofmob = new /datum/stats(src)
 
 /**
  * Generate the tag for this mob

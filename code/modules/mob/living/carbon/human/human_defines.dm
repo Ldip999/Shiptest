@@ -82,4 +82,6 @@
 	///blood particle effect
 	var/obj/effect/abstract/particle_holder/blood_particle
 
+	var/datum/overmap/ship/controlled/shippee
+
 	COOLDOWN_DECLARE(bloodloss_message)

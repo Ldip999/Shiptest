@@ -227,6 +227,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///
 	var/hearted_until
 
+	var/points = 0
+
 
 
 /datum/preferences/New(client/C)
@@ -244,6 +246,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				max_save_slots = 50
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
+	
 		if(load_character())
 			species_looking_at = pref_species.id
 			return

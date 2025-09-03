@@ -111,11 +111,11 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 			if(redeemed_exp == null || length(cached_valid_exports[redeemed_exp]) == 0)
 				CRASH("passed a bad export type through ui_act of [src]")
 			else
-				redeem_export(redeemed_exp)
+				redeem_export(redeemed_exp, ui.user)
 			update_static_data(usr, ui)
 			return TRUE
 
-/obj/machinery/computer/outpost_export_console/proc/redeem_export(datum/export/exp)
+/obj/machinery/computer/outpost_export_console/proc/redeem_export(datum/export/exp,mob/user )
 	if(!(exp in cached_valid_exports))
 		CRASH("somehow [exp] is not in cached_valid_exports")
 	var/total_payout = 0
@@ -131,5 +131,15 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
 	do_sparks(5, 0, linked_pad.loc)
 	new /obj/item/spacecash/bundle(loc, total_payout)
+	if(user)
+		if(ishuman(user))
+			var/mob/living/carbon/human/humuser = user
+			for(var/key in humuser.shippee.job_holder_refs)
+				for(var/datum/weakref/wagieref in humuser.shippee.job_holder_refs[key]) //This thing throws an error in editor but works perfectly in game and compiles fine. I feel like at this point dreammaker is actively gaslighting me
+					var/mob/living/carbon/human/wagie = wagieref.resolve()
+					wagie.statsofmob.addExport(total_payout)
+					var/totalpoints = (total_payout / 400)
+					to_chat(wagie, "You received [totalpoints] points for this export!")
 	playsound(src, pick(list('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg')), 40, TRUE)
+
 	return TRUE
