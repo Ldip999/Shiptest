@@ -24,7 +24,7 @@
 	head = /obj/item/clothing/head/helmet/ramzi
 	back = /obj/item/storage/backpack
 	neck = /obj/item/clothing/neck/dogtag/ramzi
-	id = /obj/item/card/id/syndicate
+	id = /obj/item/storage/wallet/drop/poor/syndicate
 
 /obj/effect/mob_spawn/human/corpse/ramzi/space
 	name = "Ramzi Hardsuit"
@@ -37,6 +37,33 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
+	id = /obj/item/storage/wallet/drop/welloff
+	belt = /obj/item/storage/belt/security/webbing/ramzi/ringneck
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/smg
+	name = "Ramzi Hardsuit"
+	outfit = /datum/outfit/ramzi/commando/smg
+
+
+
+/datum/outfit/ramzi/commando/smg
+	belt = /obj/item/storage/belt/security/webbing/ramzi/cobra
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra/worn
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/shotgun
+	outfit = /datum/outfit/ramzi/commando/shotgun
+
+/datum/outfit/ramzi/commando/shotgun
+	belt = /obj/item/storage/belt/security/webbing/ramzi/bulldog
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/worn
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/sniper
+	outfit = /datum/outfit/ramzi/commando/sniper
+
+/datum/outfit/ramzi/commando/sniper
+	
+	belt = /obj/item/storage/belt/security/webbing/ramzi/boomslang
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang/worn
 
 /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
 	name = "Ramzi Softsuit"
@@ -50,6 +77,15 @@
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft/smg
+	name = "Ramzi Softsuit"
+	outfit = /datum/outfit/ramzi/soft/smg
+
+/datum/outfit/ramzi/soft/smg
+	belt = /obj/item/storage/belt/security/webbing/ramzi/cobra
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra/worn
+
+
 /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
 	name = "Ramzi Softsuit Surplus"
 	outfit = /datum/outfit/ramzi/soft/surplus
@@ -61,6 +97,48 @@
 	suit = /obj/item/clothing/suit/space/syndicate/ramzi/surplus
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/knife
+	l_hand = /obj/item/melee/knife/combat
+
+/obj/effect/mob_spawn/human/corpse/ramzi/ranged/pistol
+	name = "Ramzi Operative"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/ranged/pistol
+
+/datum/outfit/ramzi/ranged/pistol
+	backpack_contents = list(/obj/item/ammo_box/magazine/m10mm_ringneck=4)
+	l_hand =/obj/item/gun/ballistic/automatic/pistol/ringneck/worn
+
+/obj/effect/mob_spawn/human/corpse/ramzi/ranged/smg
+	name = "Ramzi Operative"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/ranged/smg
+
+/datum/outfit/ramzi/ranged/smg
+	backpack_contents = list(/obj/item/ammo_box/magazine/m45_cobra=2)
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra/worn
+
+
+/obj/effect/mob_spawn/human/corpse/ramzi/ranged/shotgun
+	name = "Ramzi Operative"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/ranged/shotgun
+
+/datum/outfit/ramzi/ranged/shotgun
+	backpack_contents = list(/obj/item/ammo_box/magazine/m12g_bulldog=2)
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/worn
+
+/obj/effect/mob_spawn/human/corpse/ramzi/ranged/sniper
+	name = "Ramzi Operative"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/ranged/sniper
+
+/datum/outfit/ramzi/ranged/sniper
+	backpack_contents = list(/obj/item/ammo_box/magazine/boomslang=2)
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang/worn
+
+
 
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper"
@@ -74,6 +152,15 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
 	mask = /obj/item/clothing/mask/gas/ramzi
 	back = /obj/item/tank/jetpack/oxygen/harness
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
+	belt = /obj/item/storage/belt/security/webbing/ramzi/rattlesnake
+
+/obj/effect/mob_spawn/human/corpse/syndicatecaptain
+	name = "Syndicate Captain"
+	id_job = "Syndicate Base Commander"
+	outfit = /datum/outfit/syndicatecaptaincorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
 
 /datum/outfit/syndicatecaptaincorpse
 	name = "Syndicate Captain Corpse"
@@ -83,14 +170,15 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate
 	head = /obj/item/clothing/head/HoS/syndicate
-	id = /obj/item/card/id
+	id = /obj/item/storage/wallet/drop/rich/syndicate
 
-/obj/effect/mob_spawn/human/corpse/syndicatecaptain
-	name = "Syndicate Captain"
-	id_job = "Syndicate Base Commander"
-	outfit = /datum/outfit/syndicatecaptaincorpse
+/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
+	name = "Cybersun Medical Director Corpse"
+	id_job = "Cybersun Medical Director"
+	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
+
 
 /datum/outfit/cybersunmedicaldirectorcorpse
 	name = "Cybersun Medical Director Corpse"
@@ -101,14 +189,8 @@
 	ears = /obj/item/radio/headset/syndicate
 	belt = /obj/item/gun/ballistic/automatic/pistol/commander
 	head = /obj/item/clothing/head/soft/cybersun/medical
-	id = /obj/item/card/id
+	id = /obj/item/storage/wallet/drop/rich/syndicate
 
-/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
-	name = "Cybersun Medical Director Corpse"
-	id_job = "Cybersun Medical Director"
-	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
 
 /datum/outfit/cybersunfieldmediccorpse
 	name = "Cybersun Field Medic Corpse"
@@ -120,7 +202,7 @@
 	belt = /obj/item/storage/belt/medical/paramedic
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	back = /obj/item/storage/backpack/messenger
-	id = /obj/item/card/id
+	id = /obj/item/storage/wallet/drop/welloff
 
 /obj/effect/mob_spawn/human/corpse/cybersunfieldmedic
 	name = "Cybersun Field Medic"
@@ -140,6 +222,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/eyepatch
 	head = /obj/item/clothing/head/bandana
+	id = /obj/item/storage/wallet/drop/poor
 
 
 /obj/effect/mob_spawn/human/corpse/pirate/ranged
@@ -150,6 +233,7 @@
 	name = "Pirate Gunner Corpse"
 	suit = /obj/item/clothing/suit/pirate
 	head = /obj/item/clothing/head/pirate
+	l_pocket =  /obj/item/stock_parts/cell/gun
 
 /obj/effect/mob_spawn/human/corpse/wizard
 	name = "Space Wizard Corpse"
@@ -176,7 +260,7 @@
 	mask = /obj/item/clothing/mask/gas/vigilitas
 	head = /obj/item/clothing/head/nanotrasen/cap/security
 	back = /obj/item/storage/backpack/messenger
-	id = /obj/item/card/id
+	id = /obj/item/storage/wallet/drop/welloff/generic
 
 /datum/outfit/vigilitas/space
 	name = "VI Responder"
@@ -189,12 +273,14 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/security/hos
 	head = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	back = /obj/item/tank/jetpack/carbondioxide
+	id = /obj/item/storage/wallet/drop/rich/generic
 
 /datum/outfit/vigilitas/director
 	name = "VI director"
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
 	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	id = /obj/item/storage/wallet/drop/rich/generic
 
 /datum/outfit/vigilitas/private
 	name = "VI Private"
@@ -226,6 +312,7 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
 	back = /obj/item/storage/backpack/security
 	gloves = /obj/item/clothing/gloves/combat
+
 
 /obj/effect/mob_spawn/human/corpse/vigilitas_hos
 	name = "VI Breacher"

@@ -13,3 +13,4 @@
 	min_recoil = 0.1
 
 	light_range = 2
+

@@ -244,3 +244,31 @@
 	desc = "A quick-access drop pouch harness used by cells of the Ramzi Clique."
 	icon_state = "ramzi_harness"
 	item_state = "ramzi_harness"
+
+
+
+/obj/item/storage/belt/security/webbing/ramzi/ringneck/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/cobra/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/m45_cobra(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/bulldog/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/m12g_bulldog(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/boomslang/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/boomslang(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/rattlesnake/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+	new /obj/item/grenade/frag(src)
+	

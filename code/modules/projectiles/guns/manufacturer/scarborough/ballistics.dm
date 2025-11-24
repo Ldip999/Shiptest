@@ -56,6 +56,9 @@
 	spread_unwielded = 9
 	recoil_unwielded = 2
 
+/obj/item/gun/ballistic/automatic/pistol/ringneck/worn
+	gun_wear = 100
+
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
@@ -435,6 +438,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
+/obj/item/gun/ballistic/automatic/smg/cobra/worn
+	gun_wear = 100
 
 /obj/item/ammo_box/magazine/m45_cobra
 
@@ -605,6 +610,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 	zoom_out_amt = 2
 
 NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
+
+
+/obj/item/gun/ballistic/automatic/marksman/boomslang/worn
+	gun_wear = 100
+
+NO_MAG_GUN_HELPER(automatic/marksman/boomslang/worn)
 
 /obj/item/ammo_box/magazine/boomslang
 	name = "\improper Boomslang Magazine (6.5mm CLIP)"
@@ -945,6 +956,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/worn
+	gun_wear = 100
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_box/magazine/m12g_bulldog
