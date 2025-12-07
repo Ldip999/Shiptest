@@ -20,3 +20,9 @@
 	desc = "A long piece of Silk that looks like a cable coil."
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "silkstring"
+
+/obj/item/weaponcrafting/clothstring
+	name = "cloth string"
+	desc = "A long piece of cloth that looks like a cable coil."
+	icon = 'icons/obj/improvised.dmi'
+	icon_state = "silkstring"

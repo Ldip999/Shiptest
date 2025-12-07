@@ -7,7 +7,7 @@
 	spawn_blacklisted = TRUE
 	load_sound = null
 	fire_sound = 'sound/weapons/bowfire.ogg'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK || ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/bow
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/bow,
@@ -47,7 +47,8 @@
 		to_chat(user, "<span clasas='warning'>You can't shoot without drawing the bow.</span>")
 		return
 	drawn = FALSE
-	. = ..() //fires, removing the arrow
+	. = ..() //fires, removing the arrow <-- DOESN'T REMOVE ARROW!!!!! WHY DO I HAVE TO FIXIT
+	magazine.stored_ammo.Cut()
 	update_appearance()
 
 /obj/item/gun/ballistic/bow/shoot_with_empty_chamber(mob/living/user)
@@ -71,9 +72,9 @@
 /obj/item/storage/bag/quiver/Initialize(mapload)
 	. = ..()
 	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
-	storage.max_w_class = WEIGHT_CLASS_TINY
+	storage.max_w_class = WEIGHT_CLASS_SMALL
 	storage.max_items = 40
-	storage.max_combined_w_class = 100
+	storage.max_combined_w_class = 200
 	storage.set_holdable(list(
 		/obj/item/ammo_casing/caseless/arrow
 		))

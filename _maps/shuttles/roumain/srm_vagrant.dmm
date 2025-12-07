@@ -446,11 +446,6 @@
 /obj/structure/closet/secure_closet/collignes,
 /obj/item/clothing/suit/armor/roumain/colligne,
 /obj/item/clothing/head/cowboy/sec/roumain/colligne,
-/obj/item/ammo_box/c38,
-/obj/item/ammo_box/c38,
-/obj/item/storage/box/ammo/c38,
-/obj/item/gun/ballistic/revolver/detective,
-/obj/item/storage/backpack/satchel/leather,
 /obj/item/gps{
 	pixel_x = -7
 	},
@@ -2561,23 +2556,14 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/cryo)
 "RH" = (
-/obj/structure/rack,
-/obj/machinery/door/window/brigdoor/westleft,
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = -2;
-	pixel_y = -8
-	},
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = 5;
-	pixel_y = -3
-	},
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
-/obj/item/storage/toolbox/ammo/shotgun,
-/obj/item/storage/box/ammo/a8_50r,
-/obj/item/storage/box/ammo/a12g_slug,
-/obj/item/storage/box/ammo/a8_50r/match,
+/obj/structure/table/wood,
+/obj/item/storage/bag/quiver,
+/obj/item/storage/bag/quiver,
+/obj/item/storage/bag/quiver,
+/obj/item/storage/bag/quiver,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Ss" = (
@@ -2821,19 +2807,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "VO" = (
-/obj/machinery/door/window/brigdoor/westright,
-/obj/structure/guncloset{
-	anchored = 1
-	},
-/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration,
-/obj/item/gun/ballistic/rifle/illestren/factory{
-	pixel_x = -4;
-	pixel_y = -5
-	},
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
-/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration,
+/obj/structure/table/wood,
+/obj/item/gun/ballistic/bow,
+/obj/item/gun/ballistic/bow,
+/obj/item/gun/ballistic/bow,
+/obj/item/gun/ballistic/bow,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Wg" = (
