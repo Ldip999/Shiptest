@@ -55,7 +55,7 @@
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
 	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
-
+	gunslingerGun = TRUE
 	COOLDOWN_DECLARE(flip_cooldown)
 
 /obj/item/gun/ballistic/revolver/examine(mob/user)

@@ -254,6 +254,9 @@
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
 /obj/item/gun/energy/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
+		to_chat(user, span_warning("Ewwww what is this crap??? I NEED A REAL WEAPON!!!"))
+		return
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
 	..() //process the gunshot as normal

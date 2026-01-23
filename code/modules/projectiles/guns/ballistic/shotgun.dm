@@ -51,6 +51,8 @@
 	///can this shotgun breach doors
 	var/door_breaching_weapon = TRUE
 
+	gunslingerGun = TRUE
+
 /obj/item/gun/ballistic/shotgun/attack_obj(obj/O, mob/living/user)
 	if(door_breaching_weapon && istype(O, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/breaching = O
@@ -115,7 +117,7 @@
 	wear_minor_threshold = 60
 	wear_major_threshold = 180
 	wear_maximum = 300
-
+	gunslingerGun = FALSE
 //Dual Feed Shotgun
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube

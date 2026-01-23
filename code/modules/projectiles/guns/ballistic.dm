@@ -71,6 +71,7 @@
 			"y" = 18,
 		)
 	)
+	var/gunslingerGun = FALSE
 
 /obj/item/gun/ballistic/Initialize(mapload, spawn_empty)
 	. = ..()
@@ -331,6 +332,9 @@
 	return ..()
 
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !gunslingerGun)
+		to_chat(user, span_warning("Ewwww what is this crap??? I NEED A REAL WEAPON!!!"))
+		return
 	. = ..() //The gun actually firing
 	postfire_empty_checks(.)
 
