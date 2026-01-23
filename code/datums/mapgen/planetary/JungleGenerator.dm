@@ -1,6 +1,6 @@
 /datum/map_generator/planet_generator/jungle
 	perlin_zoom = 65
-	mountain_height = 0.85
+	mountain_height = 0.60
 
 	primary_area_type = /area/overmap_encounter/planetoid/jungle
 

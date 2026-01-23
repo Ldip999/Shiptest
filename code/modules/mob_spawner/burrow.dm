@@ -107,3 +107,11 @@ GLOBAL_LIST_INIT(ore_probability, list(
 		/mob/living/simple_animal/hostile/asteroid/hivelord,
 		/mob/living/simple_animal/hostile/carp
 	)
+
+/obj/structure/spawner/burrow/jungle_infested_planet
+	mob_types = list(
+		/mob/living/simple_animal/hostile/alien,
+		/mob/living/simple_animal/hostile/alien/sentinel,
+		/mob/living/simple_animal/hostile/alien/drone,
+	)
+

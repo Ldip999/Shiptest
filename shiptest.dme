@@ -830,6 +830,7 @@
 #include "code\datums\mapgen\planetary\BeachGenerator.dm"
 #include "code\datums\mapgen\planetary\desertGenerator.dm"
 #include "code\datums\mapgen\planetary\JungleGenerator.dm"
+#include "code\datums\mapgen\planetary\JungleInfestedGenerator.dm"
 #include "code\datums\mapgen\planetary\LavaGenerator.dm"
 #include "code\datums\mapgen\planetary\moon_generator.dm"
 #include "code\datums\mapgen\planetary\RockGenerator.dm"
@@ -3733,4 +3734,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "code\game\objects\items\barricades\sandbags.dm"
+#include "code\game\objects\structures\barricade\barricade.dm"
+#include "code\game\objects\structures\barricade\advbarricade.dm"
 // END_INCLUDE

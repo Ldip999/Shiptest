@@ -27,11 +27,10 @@
 	var/spawn_punchcard = TRUE
 	var/bonus_text = TRUE
 
-/datum/mission/outpost/drill/generate_mission_details()
-	. = ..()
-	selected_planet = pick(available_planets)
-	num_wanted = rand(num_wanted-2,num_wanted+2)
-	value += num_wanted*100
+
+/datum/mission/outpost/drill/proc/setplanet(pickedplanet)
+	
+	selected_planet = pickedplanet
 	name = "Class [class_wanted] [selected_planet.name] core sample mission"
 	desc = "We require geological information from a neighboring [selected_planet.name]. \
 			Please anchor the drill in place and defend it until it has gathered enough samples.\
@@ -40,13 +39,18 @@
 		desc += " \n\nA punchcard will be provided for ease of locating a [selected_planet.name]. \
 					A 500 credit bonus will be applied for not using one."
 
+/datum/mission/outpost/drill/generate_mission_details()
+	. = ..()
+	num_wanted = rand(num_wanted-2,num_wanted+2)
+	value += num_wanted*100
+
 
 /datum/mission/outpost/drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	sampler = spawn_bound(/obj/machinery/drill/mission, accept_loc, VARSET_CALLBACK(src, sampler, null))
 	sampler.mission_class = class_wanted
 	sampler.num_wanted = num_wanted
-	sampler.orevein_wanted = available_planets[selected_planet]
+	sampler.orevein_wanted = selected_planet.vein
 	sampler.name += " (Class [class_wanted] [selected_planet.name])"
 
 	if(spawn_punchcard)
@@ -128,7 +132,7 @@
 
 /datum/mission/outpost/drill/rareplanet/generate_mission_details()
 	. = ..()
-	name = "Class [class_wanted] rare [selected_planet.name] core sample mission"
+	/*name = "Class [class_wanted] rare [selected_planet.name] core sample mission"
 	desc = "We have discovered a rare [selected_planet.name] and wish to study it's geology. \
 			Please anchor the drill in place and defend it until it has gathered enough samples. \
 			Not much information on these planets are known, caution is advised. \
@@ -144,7 +148,7 @@
 
 	if(bonus_text)
 		desc += " \n\nA punchcard will be provided for ease of locating a [selected_planet.name].\
-				A 500 credit bonus will be applied for not using one."
+				A 500 credit bonus will be applied for not using one."*/
 
 /datum/mission/outpost/drill/rareplanet/classtwo
 	name = "Class 2 rare core sample mission"

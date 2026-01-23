@@ -95,7 +95,7 @@
 		return
 
 	mountain_height = nearby_event.mountain_height_override
-	return TRUE
+	difficulty = 1
 
 /datum/biome/asteroid
 	open_turf_types = list(

@@ -133,7 +133,7 @@
 			deconstruct()
 
 /obj/structure/barricade/sandbags/make_debris()
-	new /obj/item/stack/sheet/mineral/sandbags(get_turf(src), 1)
+	new /obj/item/stack/sandbags(get_turf(src), 3)
 
 /obj/structure/barricade/sandbags/examine(mob/user)
 	. = ..()

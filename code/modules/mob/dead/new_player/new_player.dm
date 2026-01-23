@@ -295,7 +295,7 @@
 	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
 		var/name = client.prefs.real_name
 		for(var/datum/overmap/ship/controlled/shippe as anything in SSovermap.controlled_ships)
-			if(!length(ship.manifest))
+			if(!length(shippe.manifest))
 				continue
 			for(var/crewmember in ship.manifest)
 				if(name == crewmember)

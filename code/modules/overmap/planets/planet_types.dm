@@ -31,6 +31,8 @@
 	var/selfloop = FALSE
 	///How much of a radio message we mess up on nearby or on landed/orbitting ships
 	var/interference_power = 0
+	///What vein it has
+	var/obj/structure/vein/vein = null
 
 
 /datum/planet_type/lava
@@ -51,6 +53,7 @@
 		/obj/item/stack/ore/plasma,
 		)
 
+	vein = /obj/structure/vein/lavaland
 
 /datum/planet_type/ice
 	name = "frozen planetoid"
@@ -69,6 +72,8 @@
 		/obj/item/stack/ore/gold,
 		)
 
+	vein = /obj/structure/vein/ice
+
 /datum/planet_type/jungle
 	name = "jungle planetoid"
 	desc = "A densely forested world, filled with vines, animals, and underbrush. Surprisingly habitable with a machete."
@@ -84,6 +89,8 @@
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
 		)
+	vein = /obj/structure/vein/jungle
+
 
 /datum/planet_type/rock
 	name = "rock planetoid"
@@ -99,6 +106,7 @@
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		)
+	vein = /obj/structure/vein/rockplanet
 
 /datum/planet_type/sand
 	name = "salty sand planetoid"
@@ -115,6 +123,7 @@
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/titanium,
 		)
+	vein = /obj/structure/vein/sand
 
 
 /datum/planet_type/beach
@@ -168,6 +177,7 @@
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/iron,
 		)
+	vein = /obj/structure/vein/asteroid
 
 /datum/planet_type/spaceruin
 	name = "weak energy signal"
@@ -248,6 +258,7 @@
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/iron,
 		)
+	vein = /obj/structure/vein/waterplanet
 
 /datum/planet_type/desert
 	name = "desert planetoid"
@@ -265,6 +276,7 @@
 	primary_ores = list(
 		/obj/item/stack/ore/gold,
 		)
+	vein = /obj/structure/vein/desert
 
 /datum/planet_type/shrouded
 	name = "shrouded planetoid"
@@ -286,6 +298,7 @@
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/iron,
 		)
+	vein = /obj/structure/vein/shrouded
 
 /datum/planet_type/moon
 	name = "planetoid moon"
@@ -304,6 +317,8 @@
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/titanium,
 		)
+	vein = /obj/structure/vein/moon
+
 
 /datum/planet_type/battlefield
 	name = "battlefield planetoid"
@@ -409,3 +424,21 @@
 /datum/map_generator/single_turf/waterball
 	turf_type = /turf/open/water/stormy_planet_lit
 	area_type = /area/overmap_encounter/planetoid/waterball
+
+
+/datum/planet_type/jungle_infested
+	name = "infested jungle planetoid"
+	desc = "A planet with a vibrant ecosystem... maybe a bit too vibrant... suprisingly uninhabitable, even with a machette."
+	planet = DYNAMIC_WORLD_JUNGLE_INFESTED
+	icon_state = "jungle"
+	color = COLOR_PURPLE
+	mapgen = /datum/map_generator/planet_generator/jungle_infested
+	default_baseturf = /turf/open/floor/plating/dirt/jungle
+	gravity = STANDARD_GRAVITY
+	weather_controller_type = /datum/weather_controller/lush
+	ruin_type = RUINTYPE_JUNGLE
+	primary_ores = list(\
+		/obj/item/stack/ore/gold,
+		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
+		)
+	vein = /obj/structure/vein/jungle_infested

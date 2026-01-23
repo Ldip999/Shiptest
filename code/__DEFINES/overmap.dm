@@ -50,6 +50,8 @@
 
 #define DYNAMIC_WORLD_TEST "test"
 
+#define DYNAMIC_WORLD_JUNGLE_INFESTED "jungle_infested"
+
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
 #define OVERMAP_SHIP_FLYING "flying"
@@ -113,3 +115,9 @@
 #define SHIPMODULE_HELMCONSOLE "helm_console"
 #define SHIPMODULE_TRANSPONDER "transponder"
 
+//Sector types
+#define GREEN_STAR "green star" //Starter area
+#define YELLOW_STAR "yellow star" //Mid, controlled area
+#define RED_STAR "red star" //Hard, contested area
+#define BLACK_ORBIT "black orbit" //Neutral, ffa
+#define MIDNIGHT_SUN "midnight sun" //Enemy territory, such as pirate bases or infested systems

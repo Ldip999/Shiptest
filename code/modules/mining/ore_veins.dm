@@ -29,13 +29,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Contents won't be randomized if the list isn't empty on initialize
 	var/list/vein_contents = list()
 	//Allows subtyped veins to determine how long it takes to mine one mining charge
-	var/mine_time_multiplier = 1
+	var/mine_time_multiplier = 2
 	//Allows subtyped veins to determine how much loot is dropped per drop_ore call
-	var/drop_rate_amount_min = 15
-	var/drop_rate_amount_max = 20
+	var/drop_rate_amount_min = 1
+	var/drop_rate_amount_max = 50
 	///variables for the mob spawners we generate
-	var/max_mobs = 3
-	var/spawn_time = 10 SECONDS
+	var/max_mobs = 5
+	var/spawn_time = 8 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
@@ -54,8 +54,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/currently_spawning = FALSE
 
 	///how far away can we create mob_spawners?
-	var/spawn_distance_min = 4
-	var/spawn_distance_max = 6
+	var/spawn_distance_min = 6
+	var/spawn_distance_max = 8
 
 
 	///a list of currently active spawners created by the vein. Used to keep us from going insane when we turn them on / off
@@ -68,7 +68,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	///how long will our spawners create mobs for?
 	var/wave_length = 45 SECONDS
 	///how long is our break after we do enough waves?
-	var/wave_downtime = 1 MINUTES
+	var/wave_downtime = 10 SECONDS
 
 	///var for a timer
 	var/wave_timer
@@ -77,6 +77,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	///the drill currently digging us
 	var/obj/machinery/drill/our_drill
+
+	var/difficultymod = 1
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
 /obj/structure/vein/Initialize()
@@ -136,7 +138,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	COOLDOWN_START(src, wave_timer, wave_length)
 	if(!increment_wave_tally())
 		return FALSE
-	var/breaches_to_spawn = clamp(vein_class, 1, vein_class - length(active_spawners))
+	var/breaches_to_spawn = clamp((vein_class * difficultymod), 2, (vein_class * difficultymod) - length(active_spawners))
 	for(var/mob_index in 1 to breaches_to_spawn)
 		if(length(active_spawners) >= vein_class)
 			return
@@ -146,7 +148,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		var/obj/effect/drill_spawner/bug_breach = new /obj/effect/drill_spawner(spawning_tile)
 		active_spawners += bug_breach
 		bug_breach.our_vein = src
-		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawner_distance_min, spawner_distance_max)
+		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, ceil(max_mobs * difficultymod) + 1, spawn_sound, spawner_distance_min, spawner_distance_max)
 		bug_breach.start_death_timer(wave_length - 5 SECONDS)
 
 /obj/structure/vein/proc/pick_tile(list/peel)
@@ -178,6 +180,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
+	multiplier *= difficultymod
 	var/list/adjacent_turfs = get_adjacent_open_turfs(current)
 	var/drop_location = src.loc //Backup in case we can't find an adjacent turf
 	if(adjacent_turfs.len)
@@ -213,7 +216,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 2
+	max_mobs = 6
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
@@ -242,7 +245,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 3 //Best not to go past 6 due to balance and lag reasons
+	max_mobs = 10 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 8 SECONDS
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -350,7 +353,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		/obj/item/stack/ore/ice = 8,
 		)
-	max_mobs = 6
+	max_mobs = 40
 	spawn_time = 8 SECONDS
 //Jungle
 
@@ -394,7 +397,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 4,
 		)
-	max_mobs = 2
+	max_mobs = 6
 	spawn_time = 15 SECONDS
 
 /obj/structure/vein/jungle/classtwo/rare
@@ -424,7 +427,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 4,
 		)
 	//jungle mobs are kind of fucking hard, less max
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/jungle/classthree/rare
@@ -493,7 +496,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 6,
 		)
 
-	max_mobs = 6
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/sand/classthree/rare
@@ -541,7 +544,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/rockplanet/classthree
@@ -564,7 +567,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/rockplanet/classfour
@@ -629,7 +632,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/diamond = 2,
 		)
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/moon/classthree
@@ -691,7 +694,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 7,
 		/obj/item/stack/ore/titanium = 5,
 		)
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/desert/classthree
@@ -712,7 +715,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 7,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 
@@ -738,7 +741,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 5 SECONDS
 	///His greed was his downfall
 	var/greed_chance = 20
@@ -746,7 +749,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/shrouded/Initialize()
 	. = ..()
 	if(prob(greed_chance))
-		max_mobs = 15
+		max_mobs = 10
 
 /obj/structure/vein/shrouded/classtwo
 	mining_charges = 10
@@ -839,7 +842,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/asteroid/classtwo/rare
@@ -871,7 +874,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/asteroid/classthree/rare
@@ -924,7 +927,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 3
+	max_mobs = 6
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/waterplanet/classthree
@@ -949,6 +952,98 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 3
+	max_mobs = 10
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/jungle_infested
+
+	mining_charges = 20
+	// class 1 has easy mobs, the ones you find on the surface
+	mob_types = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife = 10,
+		/mob/living/simple_animal/hostile/alien = 5,
+		/mob/living/simple_animal/hostile/alien/sentinel = 5,
+		/mob/living/simple_animal/hostile/alien/queen = 1,
+		/mob/living/simple_animal/hostile/alien/drone = 5,
+
+	)
+
+	//same surface ore drop rate too...
+	ore_list = list(
+		/obj/item/stack/ore/iron = 50,
+		/obj/item/stack/ore/gold = 30,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/titanium = 1,
+		)
+
+/obj/structure/vein/jungle_infested/classtwo
+	mining_charges = 50
+	vein_class = 2
+	//We then start to introduce the unused jungle mobs... slowly. <-- nah we live we die we wipe
+	mob_types = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 10,
+		/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife = 10,
+		/mob/living/simple_animal/hostile/alien = 50,
+		/mob/living/simple_animal/hostile/alien/sentinel = 50,
+		/mob/living/simple_animal/hostile/alien/queen = 10,
+		/mob/living/simple_animal/hostile/alien/drone = 50,
+		/mob/living/simple_animal/hostile/jungle/seedling = 30,
+		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 40,
+	)
+	ore_list = list(
+		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/gold = 20,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/titanium = 4,
+		)
+	max_mobs = 6
+	spawn_time = 15 SECONDS
+
+/obj/structure/vein/jungle_infested/classtwo/rare
+	mining_charges = 80
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 5,
+		)
+
+/obj/structure/vein/jungle_infested/classthree
+	mining_charges = 80
+	vein_class = 3
+	//This really bints your bogos and deactivates your iguana
+	mob_types = list(
+		/mob/living/simple_animal/hostile/alien = 100,
+		/mob/living/simple_animal/hostile/alien/sentinel = 100,
+		/mob/living/simple_animal/hostile/alien/queen = 100,
+		/mob/living/simple_animal/hostile/alien/drone = 100,
+		/mob/living/simple_animal/hostile/jungle/seedling = 30,
+		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 40,
+	)
+	ore_list = list(
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/titanium = 4,
+		)
+	//jungle mobs are kind of fucking hard, less max
+	max_mobs = 10
+	spawn_time = 10 SECONDS
+
+/obj/structure/vein/jungle_infested/classthree/rare
+	mining_charges = 100
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 10,
+		)

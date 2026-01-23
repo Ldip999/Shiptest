@@ -28,9 +28,9 @@
 
 /datum/supply_pack/sec_supply/empty_sandbags
 	name = "Empty Sandbags"
-	desc = "Contains one box of seven empty sandbags for deployable cover in the field. Sand not included."
-	contains = list(/obj/item/storage/box/emptysandbags)
-	cost = 150
+	desc = "Contains 50 empty sandbags for deployable cover in the field. Sand not included."
+	contains = list(/obj/item/stack/sandbags_empty/full)
+	cost = 100
 	crate_name = "sandbag crate"
 
 /datum/supply_pack/sec_supply/maintenance_kit

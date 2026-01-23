@@ -1,6 +1,6 @@
 /datum/mission/outpost
 	acceptable = TRUE
-
+	
 /datum/mission/outpost/New(_outpost)
 	source_outpost = _outpost
 	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))

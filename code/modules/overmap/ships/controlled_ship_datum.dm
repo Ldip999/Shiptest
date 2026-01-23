@@ -7,6 +7,7 @@
  */
 /datum/overmap/ship/controlled
 	token_type = /obj/overmap/rendered
+	///When undocking, try to use UndockTime() instead!
 	dock_time = 10 SECONDS
 	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK, INTERACTION_OVERMAP_HAIL, INTERACTION_OVERMAP_INTERDICTION)
 
@@ -223,12 +224,18 @@
 		if(force)
 			SSshuttle.transit_requesters -= shuttle_port
 			SSshuttle.generate_transit_dock(shuttle_port) // We need a port, NOW.
-
-	priority_announce("Beginning undocking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
-	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.takeoff_sound)
-
+	if(canUndock())
+		priority_announce("Beginning undocking procedures. Completion in [UndockTime()/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
+		addtimer(CALLBACK(src, PROC_REF(playUndockingSound)), UndockTime() -  (10 SECONDS))
+	else
+		priority_announce("Undocking failed! No working engines!", "Hardware Error!", sender_override = name, zlevel = shuttle_port.virtual_z())
+		return
 	. = ..()
 	dock_time = dock_time_temp // Set it back to the original value if it was changed
+
+/datum/overmap/ship/controlled/proc/playUndockingSound()
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.takeoff_sound)
+
 
 /datum/overmap/ship/controlled/complete_undock()
 	shuttle_port.initiate_docking(shuttle_port.assigned_transit)
@@ -536,6 +543,21 @@
 	if(our_helm)
 		our_helm.cancel_jump()
 
+/datum/overmap/ship/controlled/UndockTime()
+	var/base = 1 MINUTES
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(real_engine.enabled && real_engine.operational() && (real_engine.return_fuel() > 2))
+			base -= 10 SECONDS
+	if(base < 10 SECONDS)
+		return 10 SECONDS
+	return base
+
+/datum/overmap/ship/controlled/canUndock()
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(real_engine.enabled && real_engine.operational() && (real_engine.return_fuel() > 2))
+			return TRUE
+	return FALSE
+		
 
 /obj/item/key/ship
 	name = "ship key"

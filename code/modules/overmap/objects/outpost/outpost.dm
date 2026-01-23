@@ -157,9 +157,20 @@
 
 /datum/overmap/outpost/proc/fill_missions()
 	max_missions = min(10 + (SSovermap.controlled_ships.len * 2), 25)
+	var/list/overmaptally = current_overmap.get_overmap_object_types()
+	var/list/basemissions = current_overmap.mission_catalogue
 	while(LAZYLEN(missions) < max_missions)
-		var/mission_type = SSmissions.get_weighted_mission_type()
+		var/mission_type = SSmissions.get_weighted_mission_type(overmaptally, basemissions)
+		
 		var/datum/mission/outpost/M = new mission_type(src)
+		if(istype(M,/datum/mission/outpost/drill))
+			var/list/overmapplanettally = current_overmap.get_overmap_planet_drillable_types()
+			if(overmapplanettally.len == 0)
+				continue
+			var/datum/overmap/dynamic/planet = pickweight_float(overmapplanettally)
+			var/datum/mission/outpost/drill/megadeath = M
+			megadeath.setplanet(planet)
+		M.mission_reward *= current_overmap.rewardmult
 		LAZYADD(missions, M)
 
 /datum/overmap/outpost/proc/load_main_level()

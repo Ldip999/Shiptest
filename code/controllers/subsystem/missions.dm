@@ -46,8 +46,8 @@ SUBSYSTEM_DEF(missions)
 
 // should probably come up with a better solution for this
 // hierarchical weighting? would need to distinguish between "real" and "fake" missions
-/datum/controller/subsystem/missions/proc/get_weighted_mission_type()
-	var/static/list/weighted_missions
+/datum/controller/subsystem/missions/proc/get_weighted_mission_type(list/overmaptally, list/basemissions)
+	/*var/static/list/weighted_missions
 	if(!weighted_missions)
 		weighted_missions = list()
 		var/list/mission_types = subtypesof(/datum/mission)
@@ -56,7 +56,22 @@ SUBSYSTEM_DEF(missions)
 				continue
 			if(mis_type::weight > 0)
 				weighted_missions[mis_type] = mis_type::weight
-	return pickweight_float(weighted_missions)
+	return pickweight_float(weighted_missions)*/
+	var/list/doablemissionlist = list()
+	for(var/opmission in basemissions)
+		if(ispath(opmission, /datum/mission/outpost/survey))
+			var/datum/mission/outpost/survey/sv = new opmission //This thing is choking on cock and wasting precious processing power and memory, but thankfully it is only called sparesely and I have no better idea how to do this...
+			for(var/ptvar in sv.target_planets)
+				if(overmaptally[ptvar])
+					doablemissionlist[opmission] = basemissions[opmission]
+		else if(ispath(opmission, /datum/mission/outpost/research))
+			var/datum/mission/outpost/research/rsc = opmission
+			if(overmaptally[rsc.objective_type])
+				doablemissionlist[opmission] = basemissions[opmission]
+		else if(ispath(opmission, /datum/mission/outpost/drill))
+			doablemissionlist[opmission] = basemissions[opmission]
+	return pickweight_float(doablemissionlist)
+
 
 /datum/controller/subsystem/missions/proc/get_researcher_name()
 	var/group = pick(list(

@@ -337,16 +337,41 @@
 				return "ERROR: Unable to do this currently! Reduce speed or undock!"
 			if(interact_target.docked_to || interact_target.docking)
 				return "ERROR: Unable to do this currently! Target is docked or docking!"
-
+			/*
 			var/list/dockables = get_dockable_locations(src)
 			if(!dockables.len)
 				return "ERROR: No open ports on [src]."
 			choice = tgui_input_list(usr, "Select where to dock [interact_target]?", "Dock at", dockables)
 			if(!choice)
+				return "Interaction canceled."*/
+			choice = tgui_input_list(usr, "Are you sure you want to interdict [interact_target]? Both of your engines will be drained!", "Interdiction", list("Yes","Cancel"))
+			if(!choice || choice == "Cancel")
 				return "Interaction canceled."
-			return interact_target.Dock(src, choice)
+			return DoInterdiction(src, interact_target)
 	//if nothing returns, return choice?
 	return choice
+
+/datum/overmap/proc/DoInterdiction(mob/living/user, datum/overmap/interact_target)
+	var/datum/overmap/ship/controlled/interdicter = src
+	var/datum/overmap/ship/controlled/interdicted = interact_target
+	//Fry ion thrusters for supposedly 10 minutes
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in interdicter.shuttle_port.get_engines())
+		real_engine.disable(6000)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in interdicted.shuttle_port.get_engines())
+		real_engine.disable(6000)
+	//Blare a loud fucking warning
+	priority_announce("!!! INTERDICTING [interact_target] !!!", "ALL HANDS ON DECK, PERPARE FOR COMBAT!", 'sound/effects/Interdiction.ogg', sender_override = name, zlevel =interdicter.shuttle_port.virtual_z())
+	priority_announce("!!! BEING INTERDICTED BY [interdicter] !!!", "ALL HANDS ON DECK, PERPARE FOR COMBAT!", 'sound/effects/Interdiction.ogg', sender_override = name, zlevel = interdicted.shuttle_port.virtual_z())
+	//Dock in empty spess
+	var/datum/overmap/dynamic/empty/empty_space = locate() in current_overmap.overmap_container[x][y]
+	if(!empty_space)
+		empty_space = new(list("x" = x, "y" = y), current_overmap)
+	if(empty_space)
+		interdicter.Dock(empty_space)
+		//Two ships cannot dock at the same time so this is the worst solution I could come up with
+		addtimer(CALLBACK(interdicted, PROC_REF(Dock), empty_space, null, TRUE), 12 SECONDS)
+
+	
 
 /**
  * This handles the interaction on the target, rather than on the interactor.
@@ -520,6 +545,21 @@
 	return
 
 /**
+ * Currently mainly used to check if all the engines are fried
+ */
+/datum/overmap/proc/canUndock()
+	return TRUE
+
+
+/**
+ * Delay with which the ships should undock.
+ */
+
+/datum/overmap/proc/UndockTime()
+	return 10 SECONDS
+
+/**
+
  * Undocks from the object this datum is docked to currently, and places it back on the overmap at the position of the object that was previously docked to.
  */
 /datum/overmap/proc/Undock(force = FALSE)
@@ -530,11 +570,11 @@
 	if(docking)
 		return
 	docking = TRUE
-
-	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_undock)), dock_time)
-	else
-		complete_undock()
+	if(canUndock())
+		if(UndockTime() && !force)
+			dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_undock)), UndockTime())
+		else
+			complete_undock()
 
 /**
  * Called after [datum/overmap/proc/Undock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.

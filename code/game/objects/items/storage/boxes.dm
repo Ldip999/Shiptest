@@ -1075,13 +1075,6 @@
 		new /obj/item/food/grown/cabbage(src)
 	new /obj/item/food/grown/chili(src)
 
-/obj/item/storage/box/emptysandbags
-	name = "box of empty sandbags"
-	illustration = "sandbag"
-
-/obj/item/storage/box/emptysandbags/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/emptysandbag(src)
 
 /obj/item/storage/box/rndboards
 	name = "\proper the liberator's legacy"

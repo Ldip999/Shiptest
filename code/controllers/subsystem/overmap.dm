@@ -56,7 +56,10 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	//default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	default_system = create_new_star_system(new /datum/overmap_star_system/greenstar)
+	create_new_star_system(new /datum/overmap_star_system/yellowstar)
+	create_new_star_system(new /datum/overmap_star_system/redstar)
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
@@ -282,6 +285,8 @@ SUBSYSTEM_DEF(overmap)
 	///Type of the star
 	var/datum/overmap/star/startype
 
+	var/sector_type = YELLOW_STAR
+
 	///Defines which generator to use for the overmap
 	var/generator_type
 	///List of all overmap objects in the star system.
@@ -345,6 +350,10 @@ SUBSYSTEM_DEF(overmap)
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
+	var/rewardmult = 1
+
+	var/list/mission_catalogue = list()
+
 	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 
 /datum/overmap_star_system/New(generate_now=TRUE)
@@ -355,7 +364,7 @@ SUBSYSTEM_DEF(overmap)
 	if(!starname)
 		starname = gen_star_name() //we reuse this for the name of the star if name isnt defined, like a uncharted sector or something
 	if(!name)
-		name = starname //we then give it here
+		name = starname + " (" + sector_type +")"//we then give it here
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
@@ -593,7 +602,7 @@ SUBSYSTEM_DEF(overmap)
 	)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
-
+	mapgen.difficulty = dynamic_datum.difficulty
 	mapgen.pre_generation(dynamic_datum)
 
 	// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
@@ -918,6 +927,49 @@ SUBSYSTEM_DEF(overmap)
 
 	return list("x" = edge_x, "y" = edge_y)
 
+/datum/overmap_star_system/proc/get_overmap_planet_types()
+	var/list/tally = list()
+	for(var/overmap_object in overmap_objects)
+		if(istype(overmap_object,/datum/overmap/dynamic))
+			var/datum/overmap/dynamic/d = overmap_object
+			if(d.planet)
+				if(tally[d.planet.type])
+					tally[d.planet.type] += 1
+				else
+					tally[d.planet.type] = 1
+	return tally
+
+/datum/overmap_star_system/proc/get_overmap_planet_drillable_types()
+	var/list/tally = list()
+	for(var/overmap_object in overmap_objects)
+		if(istype(overmap_object,/datum/overmap/dynamic))
+			var/datum/overmap/dynamic/d = overmap_object
+			if(d.planet && d.planet.vein)
+				if(tally[d.planet.type])
+					tally[d.planet.type] += 1
+				else
+					tally[d.planet.type] = 1
+	return tally
+
+/datum/overmap_star_system/proc/get_overmap_object_types()
+	var/list/tally = list()
+	for(var/overmap_object in overmap_objects)
+		if(istype(overmap_object,/datum/overmap/dynamic))
+			var/datum/overmap/dynamic/d = overmap_object
+			if(d.planet)
+				if(tally[d.planet.type])
+					tally[d.planet.type] += 1
+				else
+					tally[d.planet.type] = 1
+		else if(istype(overmap_object, /datum/overmap/event))
+			var/datum/overmap/event/e = overmap_object
+			if(tally[e.basetype])
+				tally[e.basetype] += 1
+			else
+				tally[e.basetype] = 1
+	return tally
+
+
 //meant to be a duplicate of default to be selectable in the spawn menu
 /datum/overmap_star_system/wilderness
 	can_be_selected_randomly = FALSE
@@ -1120,3 +1172,81 @@ SUBSYSTEM_DEF(overmap)
 	The [span_notice("MODIF. OVERMAP")] tool is similar in usuage to BUILD ADV but to manipulate the overmap only.
 	"}
 	return ..()
+
+/datum/overmap_star_system/greenstar
+
+	has_outpost = TRUE
+	encounters_refresh = TRUE
+	//main colors, used for dockable terrestrials, and background
+	secondary_color = "#1d4627"
+	overmap_icon_state = "overmap"
+	sector_type = GREEN_STAR
+	dynamic_probabilities = list(
+		DYNAMIC_WORLD_BEACHPLANET = 50,
+		DYNAMIC_WORLD_DESERT = 5,
+		DYNAMIC_WORLD_JUNGLE = 10,
+		DYNAMIC_WORLD_MOON = 20,
+		DYNAMIC_WORLD_ASTEROID = 20
+	)
+	mission_catalogue = list(\
+		/datum/mission/outpost/survey/garden = 20,
+		/datum/mission/outpost/research/meteor = 5,
+		/datum/mission/outpost/research/carp = 5,
+		/datum/mission/outpost/research/dust = 5,
+		/datum/mission/outpost/research/radstorm = 5,
+		/datum/mission/outpost/research/ion = 5,
+		/datum/mission/outpost/research/flare = 5,
+		/datum/mission/outpost/drill = 10,
+		/datum/mission/outpost/drill/classtwo = 5,
+		/datum/mission/outpost/drill/classthree = 1
+	)
+
+	rewardmult = 0.5
+
+
+/datum/overmap_star_system/yellowstar
+
+	has_outpost = TRUE
+	secondary_color = "#524f28"
+	overmap_icon_state = "overmap"
+	sector_type = YELLOW_STAR
+	dynamic_probabilities = list(
+		DYNAMIC_WORLD_WASTEPLANET = 10,
+		DYNAMIC_WORLD_DESERT = 20,
+		DYNAMIC_WORLD_JUNGLE = 5,
+		DYNAMIC_WORLD_LAVA = 20,
+		DYNAMIC_WORLD_SAND = 20,
+		DYNAMIC_WORLD_ROCKPLANET = 5,
+		DYNAMIC_WORLD_ICE = 20,
+		DYNAMIC_WORLD_MOON = 20,
+		DYNAMIC_WORLD_ASTEROID = 20,
+		DYNAMIC_WORLD_SPACERUIN = 20
+	)
+	mission_catalogue = list(\
+		/datum/mission/outpost/survey/garden/waste = 10,
+		/datum/mission/outpost/survey/garden/ice = 10,
+		/datum/mission/outpost/survey/garden/arid = 10,
+		/datum/mission/outpost/drill = 10,
+		/datum/mission/outpost/drill/classtwo = 30,
+		/datum/mission/outpost/drill/classthree = 10
+	)
+	rewardmult = 1
+
+/datum/overmap_star_system/redstar
+	has_outpost = TRUE
+	secondary_color = "#522828"
+	overmap_icon_state = "overmap"
+	sector_type = RED_STAR
+	dynamic_probabilities = list(
+		DYNAMIC_WORLD_WASTEPLANET = 50,
+		DYNAMIC_WORLD_LAVA = 50,
+		DYNAMIC_WORLD_ICE = 50,
+		DYNAMIC_WORLD_JUNGLE_INFESTED = 50,
+		DYNAMIC_WORLD_SPACERUIN = 40
+	)
+	mission_catalogue = list(\
+		/datum/mission/outpost/drill = 5,
+		/datum/mission/outpost/drill/classtwo = 10,
+		/datum/mission/outpost/drill/classthree = 50
+	)
+	rewardmult = 2

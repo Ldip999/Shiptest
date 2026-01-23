@@ -9,11 +9,11 @@
 	emote_hear = list("clicks its mandibles")
 	emote_see = list("shakes the sand off itself")
 
-	health = 35
-	maxHealth = 35
+	health = 50
+	maxHealth = 50
 
 	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_upper = 30
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
@@ -95,12 +95,12 @@
 	icon_living = "queen"
 	icon_dead = "queen_dead"
 	mob_size = MOB_SIZE_LARGE
-	health = 175
-	maxHealth = 175
-	melee_damage_lower = 25
-	melee_damage_upper = 25
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 30
+	melee_damage_upper = 50
 
-	heal_amount = 20
+	heal_amount = 10
 
 /mob/living/simple_animal/hostile/asteroid/antlion/mega/Initialize()
 	. = ..()

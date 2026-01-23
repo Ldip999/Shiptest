@@ -578,10 +578,10 @@
 			"price" = 600,
 			"faction" = FALSE,
 		)
-		GLOB.anomaly_loadout_utility_indie[/obj/item/storage/box/emptysandbags] = list(
-			"name" = "box of empty sandbags",
-			"desc" = "Fortifications on a budget",
-			"price" = 150,
+		GLOB.anomaly_loadout_utility_indie[/obj/item/stack/sandbags_empty/full] = list(
+			"name" = "50 empty sandbags",
+			"desc" = "Fortifications on a budget. Sand sold seperately. Can also be filled with snow!",
+			"price" = 100,
 			"faction" = FALSE,
 		)
 		GLOB.anomaly_loadout_utility_indie[/obj/item/grenade/smokebomb] = list(
