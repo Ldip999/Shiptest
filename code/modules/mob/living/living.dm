@@ -2007,3 +2007,10 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
  */
 /mob/living/proc/get_reagent_amount(reagent)
 	return reagents.get_reagent_amount(reagent)
+
+
+/mob/living/get_status_tab_items()
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_VETDOC) || HAS_TRAIT(src, TRAIT_FIELDMEDIC))
+		. += ""
+		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"

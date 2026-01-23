@@ -1358,28 +1358,38 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
-	// nutrition decrease and satiety
-	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
-		// THEY HUNGER
-		var/hunger_rate = HUNGER_FACTOR
-		var/datum/component/mood/mood = H.GetComponent(/datum/component/mood)
-		if(mood && mood.sanity > SANITY_DISTURBED)
-			hunger_rate *= max(0.5, 1 - 0.002 * mood.sanity) //0.85 to 0.75
-		// Whether we cap off our satiety or move it towards 0
-		if(H.satiety > MAX_SATIETY)
-			H.satiety = MAX_SATIETY
-		else if(H.satiety > 0)
-			H.satiety--
-		else if(H.satiety < -MAX_SATIETY)
-			H.satiety = -MAX_SATIETY
-		else if(H.satiety < 0)
-			H.satiety++
-			if(prob(round(-H.satiety/40)))
-				H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
-			hunger_rate = 3 * HUNGER_FACTOR
-		hunger_rate *= H.physiology.hunger_mod
-		H.adjust_nutrition(-hunger_rate)
 
+	// nutrition decrease and satiety
+	if (H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
+		if(H.nutrition > 0)
+			// THEY HUNGER
+			var/hunger_rate = HUNGER_FACTOR
+			var/datum/component/mood/mood = H.GetComponent(/datum/component/mood)
+			if(mood && mood.sanity > SANITY_DISTURBED)
+				hunger_rate *= max(0.5, 1 - 0.002 * mood.sanity) //0.85 to 0.75
+			// Whether we cap off our satiety or move it towards 0
+			if(H.satiety > MAX_SATIETY)
+				H.satiety = MAX_SATIETY
+			else if(H.satiety > 0)
+				H.satiety--
+			else if(H.satiety < -MAX_SATIETY)
+				H.satiety = -MAX_SATIETY
+			else if(H.satiety < 0)
+				H.satiety++
+				if(prob(round(-H.satiety/40)))
+					H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
+				hunger_rate = 3 * HUNGER_FACTOR
+			hunger_rate *= H.physiology.hunger_mod
+			H.adjust_nutrition(-hunger_rate)
+			if(HAS_TRAIT(H,TRAIT_AGGROMETABOLISM))
+				var/healing = H.nutrition / 1000
+				H.adjust_nutrition(-(healing * 10))
+				H.adjustToxLoss(-healing, 0)
+				H.adjustBruteLoss(-healing, 0)
+				H.adjustFireLoss(-healing, 0)
+		if(H.nutrition < NUTRITION_LEVEL_STARVING && HAS_TRAIT(H,TRAIT_AGGROMETABOLISM))
+			H.adjustBruteLoss(0.5, 0)
+			H.adjustFireLoss(0.5, 0)
 
 	if (H.nutrition > NUTRITION_LEVEL_FULL)
 		if(H.overeatduration < 600) //capped so people don't take forever to unfat

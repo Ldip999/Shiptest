@@ -358,6 +358,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PINPOINT_EYES "pinpoint_eyes"
 #define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
 #define TRAIT_GOOD_CHEMICAL_NIGHTVISION "good_chemical_nightvision"
+#define TRAIT_AGGROMETABOLISM "aggrometabolism"
+#define TRAIT_BRUTEWEAK "brute_weakness"
+#define TRAIT_BRUTEWEAKMAJOR "brute_weakness_major"
+#define TRAIT_BURNWEAK "burn_weakness"
+#define TRAIT_BURNWEAKMAJOR "burn_weakness_major"
+
 
 ///Trait for dryable items
 #define TRAIT_DRYABLE "trait_dryable"
@@ -520,5 +526,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
 #define TRAIT_CLIMBABLE "trait_climbable"
 
+#define TRAIT_VETDOC "trait_vetdoc"
+#define TRAIT_FIELDMEDIC "trait_fieldmedic"
+
+#define TRAIT_ARMOR_AVERSION "trait_armor_aversion"
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"
